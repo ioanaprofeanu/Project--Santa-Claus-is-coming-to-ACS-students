@@ -1,9 +1,9 @@
 package simulation;
 
-import average.score.strategy.AverageScoreStrategyFactory;
-import database.SantaDatabase;
+import fileio.input.SimulationDataInput;
 import fileio.output.AllYearsChildrenOutput;
 
 public interface Simulation {
-    public void makeSimulation(SantaDatabase santaDatabase, AllYearsChildrenOutput allYearsChildrenOutput);
+    public void makeSimulation(SimulationDataInput simulationDataInput,
+                               AllYearsChildrenOutput allYearsChildrenOutput);
 }

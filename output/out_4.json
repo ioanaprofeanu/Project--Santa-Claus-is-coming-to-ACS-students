@@ -2,21 +2,6 @@
   "annualChildren" : [ {
     "children" : [ {
       "id" : 0,
-      "lastName" : "Pop",
-      "firstName" : "Maria",
-      "city" : "Braila",
-      "age" : 4,
-      "giftsPreferences" : [ "Sweets" ],
-      "averageScore" : 10.0,
-      "niceScoreHistory" : [ 9.0 ],
-      "assignedBudget" : 131.5,
-      "receivedGifts" : [ {
-        "productName" : "Chocolate",
-        "price" : 15.0,
-        "category" : "Sweets"
-      } ]
-    }, {
-      "id" : 0,
       "lastName" : "Stoica",
       "firstName" : "Miruna",
       "city" : "Iasi",
@@ -37,6 +22,21 @@
         "productName" : "Car",
         "price" : 20.0,
         "category" : "Toys"
+      } ]
+    }, {
+      "id" : 1,
+      "lastName" : "Pop",
+      "firstName" : "Maria",
+      "city" : "Braila",
+      "age" : 4,
+      "giftsPreferences" : [ "Sweets" ],
+      "averageScore" : 10.0,
+      "niceScoreHistory" : [ 9.0 ],
+      "assignedBudget" : 131.5,
+      "receivedGifts" : [ {
+        "productName" : "Chocolate",
+        "price" : 15.0,
+        "category" : "Sweets"
       } ]
     } ]
   } ]

@@ -1,6 +1,6 @@
 package database;
 
-import entities.ChildAnnualData;
+import entities.Child;
 import entities.Gift;
 import fileio.input.ChildInput;
 import fileio.input.GiftInput;
@@ -18,7 +18,7 @@ public class SantaDatabase {
     /**
      * list of all children
      */
-    private List<ChildAnnualData> children;
+    private List<Child> children;
     /**
      * map of gifts with category as key and the list of
      * gifts sorted in ascending order by price as value
@@ -44,7 +44,8 @@ public class SantaDatabase {
         }
         for (ChildInput childInput : childrenInput) {
             if (childInput.getAge() <= 18) {
-                ChildAnnualData child = new ChildAnnualData(childInput);
+                System.out.println(childInput.getId());
+                Child child = new Child(childInput);
                 children.add(child);
             }
         }
@@ -95,11 +96,11 @@ public class SantaDatabase {
         }
     }
 
-    public List<ChildAnnualData> getChildren() {
+    public List<Child> getChildren() {
         return children;
     }
 
-    public void setChildren(List<ChildAnnualData> children) {
+    public void setChildren(List<Child> children) {
         this.children = children;
     }
 

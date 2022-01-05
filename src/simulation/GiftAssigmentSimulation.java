@@ -1,9 +1,12 @@
 package simulation;
 
-import average.score.strategy.AverageScoreStrategyFactory;
+import averagescorestrategy.AverageScoreStrategyFactory;
 import database.SantaDatabase;
-import entities.ChildAnnualData;
+import entities.Child;
 import entities.Gift;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Abstract class which handles the gift assigment part of the simulation
@@ -14,19 +17,30 @@ public abstract class GiftAssigmentSimulation {
      */
     private double budgetUnit;
 
-    public GiftAssigmentSimulation() {
+    protected GiftAssigmentSimulation() {
         this.budgetUnit = 0;
+    }
+
+    /**
+     * Function which executes all operations in order to assign gifts
+     * @param santaDatabase the main database
+     */
+    public void makeGiftAssigment(SantaDatabase santaDatabase) {
+        calculateAverageScores(santaDatabase);
+        setBudgetUnit(santaDatabase);
+        setChildrenBudget(santaDatabase);
+        assignGifts(santaDatabase);
     }
 
     /**
      * For each child, calculate the average nice score using the factory and strategy patterns
      * @param santaDatabase the main database
      */
-    public void calculateAverageScores(SantaDatabase santaDatabase) {
+    private void calculateAverageScores(SantaDatabase santaDatabase) {
         if (santaDatabase == null) {
             return;
         }
-        for (ChildAnnualData child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildren()) {
             child.calculateAverageScore(AverageScoreStrategyFactory.getInstance().createAverageScoreStrategy(child));
         }
     }
@@ -36,12 +50,12 @@ public abstract class GiftAssigmentSimulation {
      * @param santaDatabase the main database
      * @return
      */
-    public void setBudgetUnit(SantaDatabase santaDatabase) {
+    private void setBudgetUnit(SantaDatabase santaDatabase) {
         if (santaDatabase == null) {
             return;
         }
         double sumOfAverageScores = 0;
-        for (ChildAnnualData child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildren()) {
             sumOfAverageScores += child.getAverageScore();
         }
         this.budgetUnit = (double) santaDatabase.getSantaBudget() / sumOfAverageScores;
@@ -51,11 +65,11 @@ public abstract class GiftAssigmentSimulation {
      * Calculate the assigned Budget for each child
      * @param santaDatabase the main database
      */
-    public void setChildrenBudget(SantaDatabase santaDatabase) {
+    private void setChildrenBudget(SantaDatabase santaDatabase) {
         if (santaDatabase == null) {
             return;
         }
-        for (ChildAnnualData child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildren()) {
             child.setAssignedBudget(child.getAverageScore() * this.budgetUnit);
         }
     }
@@ -64,12 +78,13 @@ public abstract class GiftAssigmentSimulation {
      * Assign gifts for each child
      * @param santaDatabase the main database
      */
-    public void assignGifts(SantaDatabase santaDatabase) {
+    private void assignGifts(SantaDatabase santaDatabase) {
         if (santaDatabase == null) {
             return;
         }
-        for (ChildAnnualData child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildren()) {
             double childAssignedBudget = child.getAssignedBudget();
+            List<Gift> newReceivedGifts = new ArrayList<>();
             for (String giftPreferences : child.getGiftsPreferences()) {
                 // if the current gift preference exists in santa's gifts hashmap
                 if (santaDatabase.getGifts().containsKey(giftPreferences)) {
@@ -79,12 +94,13 @@ public abstract class GiftAssigmentSimulation {
                     // if the price of the gift is not higher than the remaining budget
                     if (currentGift.getPrice() <= childAssignedBudget) {
                         // add the gift in the child's received gifts list
-                        child.getReceivedGifts().add(currentGift);
+                        newReceivedGifts.add(currentGift);
                         // from the child's assigned budget, subtract the price of the given gift
                         childAssignedBudget -= currentGift.getPrice();
                     }
                 }
             }
+            child.setReceivedGifts(newReceivedGifts);
         }
     }
 }

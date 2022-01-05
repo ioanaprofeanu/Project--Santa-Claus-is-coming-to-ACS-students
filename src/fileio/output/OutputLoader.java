@@ -25,7 +25,6 @@ public class OutputLoader {
         ObjectMapper mapper = new ObjectMapper();
         try {
             ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
-            System.out.println(outputPath);
             writer.writeValue(new File(outputPath), simulationDataOutput);
         } catch (IOException e) {
             e.printStackTrace();

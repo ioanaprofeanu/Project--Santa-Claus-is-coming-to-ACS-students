@@ -46,11 +46,15 @@ public final class SimulationDataInput {
         return initialData;
     }
 
-    public void setInitialDataInput(InitialDataInput initialData) {
+    public void setInitialData(InitialDataInput initialData) {
         this.initialData = initialData;
     }
 
     public List<AnnualChangesInput> getAnnualChangesInputs() {
+        return annualChanges;
+    }
+
+    public List<AnnualChangesInput> getAnnualChanges() {
         return annualChanges;
     }
 

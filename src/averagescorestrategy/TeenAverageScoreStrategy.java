@@ -1,13 +1,13 @@
-package average.score.strategy;
+package averagescorestrategy;
 
-import entities.ChildAnnualData;
+import entities.Child;
 
 /**
  * Implement the strategy for the teen age category
  */
 public class TeenAverageScoreStrategy implements AverageScoreStrategy{
     @Override
-    public double getAverageScore(ChildAnnualData child) {
+    public double getAverageScore(Child child) {
         double weightFactors = 0;
         double weightSum = 0;
         for (int i = 1; i <= child.getNiceScoreHistory().size(); i++) {

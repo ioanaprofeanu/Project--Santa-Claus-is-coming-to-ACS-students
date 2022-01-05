@@ -1,9 +1,7 @@
 package main;
 
-import average.score.strategy.AverageScoreStrategyFactory;
 import checker.Checker;
 import common.Constants;
-import database.SantaDatabase;
 import fileio.input.InputLoader;
 import fileio.input.SimulationDataInput;
 import fileio.output.AllYearsChildrenOutput;
@@ -33,16 +31,14 @@ public final class Main {
             InputLoader inputLoader = new InputLoader(testPath);
             // initialise the input object
             SimulationDataInput simulationDataInput = inputLoader.readDataInput();
-
+            System.out.println(simulationDataInput);
             // initialise the output object with all children from all the simulation's years
             AllYearsChildrenOutput allYearsChildrenOutput =  new AllYearsChildrenOutput();
 
-            // initialise the database with the values retrieved from the input file
-            SantaDatabase santaDatabase = new SantaDatabase(simulationDataInput);
-
             // make the simulation
             CompleteSimulation completeSimulation = new CompleteSimulation(simulationDataInput);
-            completeSimulation.makeSimulation(santaDatabase, allYearsChildrenOutput);
+            completeSimulation.makeSimulation(simulationDataInput, allYearsChildrenOutput);
+
             String outputPath = Constants.OUTPUT_PATH + i + Constants.FILE_EXTENSION;
             OutputLoader outputLoader = new OutputLoader(outputPath ,allYearsChildrenOutput);
             outputLoader.writeDataOutput();

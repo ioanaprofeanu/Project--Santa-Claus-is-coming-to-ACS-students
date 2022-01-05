@@ -2,17 +2,17 @@
   "annualChildren" : [ {
     "children" : [ {
       "id" : 0,
-      "lastName" : "Ionescu",
-      "firstName" : "Miruna",
-      "city" : "Oradea",
-      "age" : 16,
-      "giftsPreferences" : [ "Books", "Sweets" ],
-      "averageScore" : 6.0,
-      "niceScoreHistory" : [ 6.0 ],
-      "assignedBudget" : 3.75,
+      "lastName" : "Popescu",
+      "firstName" : "Andreea",
+      "city" : "Braila",
+      "age" : 15,
+      "giftsPreferences" : [ "Clothes", "Toys" ],
+      "averageScore" : 7.0,
+      "niceScoreHistory" : [ 7.0 ],
+      "assignedBudget" : 4.375,
       "receivedGifts" : [ ]
     }, {
-      "id" : 0,
+      "id" : 1,
       "lastName" : "Cantemir",
       "firstName" : "Diana",
       "city" : "Brasov",
@@ -23,15 +23,15 @@
       "assignedBudget" : 1.875,
       "receivedGifts" : [ ]
     }, {
-      "id" : 0,
-      "lastName" : "Popescu",
-      "firstName" : "Andreea",
-      "city" : "Braila",
-      "age" : 15,
-      "giftsPreferences" : [ "Clothes", "Toys" ],
-      "averageScore" : 7.0,
-      "niceScoreHistory" : [ 7.0 ],
-      "assignedBudget" : 4.375,
+      "id" : 2,
+      "lastName" : "Ionescu",
+      "firstName" : "Miruna",
+      "city" : "Oradea",
+      "age" : 16,
+      "giftsPreferences" : [ "Books", "Sweets" ],
+      "averageScore" : 6.0,
+      "niceScoreHistory" : [ 6.0 ],
+      "assignedBudget" : 3.75,
       "receivedGifts" : [ ]
     } ]
   } ]

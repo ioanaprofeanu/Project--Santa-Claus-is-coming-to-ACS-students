@@ -1,6 +1,6 @@
 package utils;
 
-import entities.ChildAnnualData;
+import entities.Child;
 import entities.Gift;
 
 import java.util.Comparator;
@@ -15,9 +15,9 @@ public final class Comparators {
     /**
      * Sort children by id in ascending order
      */
-    public static class SortChildrenByIdAsc implements Comparator<ChildAnnualData> {
+    public static class SortChildrenByIdAsc implements Comparator<Child> {
         @Override
-        public int compare(ChildAnnualData o1, ChildAnnualData o2) {
+        public int compare(Child o1, Child o2) {
             if (o2.getId() < o1.getId()) {
                 return 1;
             }

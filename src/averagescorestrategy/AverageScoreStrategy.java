@@ -1,6 +1,6 @@
-package average.score.strategy;
+package averagescorestrategy;
 
-import entities.ChildAnnualData;
+import entities.Child;
 
 import java.util.List;
 
@@ -9,5 +9,5 @@ import java.util.List;
  * depending on the child's age
  */
 public interface AverageScoreStrategy {
-    public double getAverageScore(ChildAnnualData child);
+    public double getAverageScore(Child child);
 }

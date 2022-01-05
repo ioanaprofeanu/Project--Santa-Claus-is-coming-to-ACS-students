@@ -1,6 +1,6 @@
-package average.score.strategy;
+package averagescorestrategy;
 
-import entities.ChildAnnualData;
+import entities.Child;
 
 /**
  * Implementation of the
@@ -42,7 +42,7 @@ public class AverageScoreStrategyFactory {
      * @param child the to-be-tested child
      * @return the strategy suited for the child's age
      */
-    public AverageScoreStrategy createAverageScoreStrategy(ChildAnnualData child) {
+    public AverageScoreStrategy createAverageScoreStrategy(Child child) {
         if (isBetween(child.getAge(), 0, 4)) {
             return new BabyAverageScoreStrategy();
         }
