@@ -6,7 +6,7 @@ import java.util.List;
  * Information about the changes made in one year retrieved from parsing
  * the input file
  */
-public class AnnualChangesInput {
+public final class AnnualChangesInput {
     /**
      * the new budget
      */

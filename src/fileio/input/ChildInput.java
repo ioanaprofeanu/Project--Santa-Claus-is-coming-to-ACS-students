@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Information about a child, retrieved from parting the input file
  */
-public class ChildInput {
+public final class ChildInput {
     /**
      * child ID
      */

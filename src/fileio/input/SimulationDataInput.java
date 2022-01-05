@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Information about the current simulation, retrieved from parsing the input file
  */
-public class SimulationDataInput {
+public final class SimulationDataInput {
     /**
      * the number of years the simulation is run in
      */

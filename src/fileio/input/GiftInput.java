@@ -3,7 +3,7 @@ package fileio.input;
 /**
  * Information about a gift, retrieved from parting the input files
  */
-public class GiftInput {
+public final class GiftInput {
     /**
      * the product's name
      */

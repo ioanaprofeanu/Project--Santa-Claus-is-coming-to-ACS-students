@@ -5,7 +5,7 @@ import fileio.input.GiftInput;
 /**
  * Information about gifts
  */
-public class Gift {
+public final class Gift {
     /**
      * the product's name
      */

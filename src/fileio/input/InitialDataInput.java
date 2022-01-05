@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * The initial data retrieved from parsing the input file
  */
-public class InitialDataInput {
+public final class InitialDataInput {
     /**
      * list of children received at input
      */

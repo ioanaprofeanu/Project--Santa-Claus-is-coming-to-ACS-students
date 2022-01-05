@@ -7,7 +7,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.IOException;
 import java.nio.file.Paths;
 
-public class InputLoader {
+public final class InputLoader {
     /**
      * The path to the input file
      */
@@ -17,20 +17,11 @@ public class InputLoader {
         this.inputPath = inputPath;
     }
 
-    public String getInputPath() {
-        return inputPath;
-    }
-
-    public void setInputPath(String inputPath) {
-        this.inputPath = inputPath;
-    }
-
     public SimulationDataInput readDataInput() {
         // create object mapper instance
         ObjectMapper mapper = new ObjectMapper();
         try {
             SimulationDataInput simulationDataInput = mapper.readValue(Paths.get(inputPath).toFile(), SimulationDataInput.class);
-            System.out.println(simulationDataInput);
             return simulationDataInput;
         } catch (StreamReadException e) {
             e.printStackTrace();
@@ -40,5 +31,13 @@ public class InputLoader {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public String getInputPath() {
+        return inputPath;
+    }
+
+    public void setInputPath(String inputPath) {
+        this.inputPath = inputPath;
     }
 }

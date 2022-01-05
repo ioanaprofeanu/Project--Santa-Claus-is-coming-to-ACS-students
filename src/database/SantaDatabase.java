@@ -43,8 +43,10 @@ public class SantaDatabase {
             return;
         }
         for (ChildInput childInput : childrenInput) {
-            ChildAnnualData child = new ChildAnnualData(childInput);
-            children.add(child);
+            if (childInput.getAge() <= 18) {
+                ChildAnnualData child = new ChildAnnualData(childInput);
+                children.add(child);
+            }
         }
         // sort the list in ascending order by id
         Collections.sort(this.children, new Comparators.SortChildrenByIdAsc());
@@ -107,6 +109,14 @@ public class SantaDatabase {
 
     public void setGifts(Map<String, List<Gift>> gifts) {
         this.gifts = gifts;
+    }
+
+    public double getSantaBudget() {
+        return santaBudget;
+    }
+
+    public void setSantaBudget(double santaBudget) {
+        this.santaBudget = santaBudget;
     }
 
     @Override

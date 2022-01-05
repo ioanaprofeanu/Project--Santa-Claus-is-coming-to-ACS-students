@@ -7,7 +7,7 @@ import java.util.List;
  * Information about the data that needs to be changed for a certain child,
  * retrieved from parting the input file
  */
-public class ChildUpdatesInput {
+public final class ChildUpdatesInput {
     /**
      * the child's id
      */

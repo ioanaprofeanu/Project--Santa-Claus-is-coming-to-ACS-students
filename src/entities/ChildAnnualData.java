@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Annual data of a child
  */
-public class ChildAnnualData extends Child {
+public final class ChildAnnualData extends Child {
     /**
      * the list of gift preferences
      */
