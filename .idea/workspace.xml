@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/AnnualChangesInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/ChildInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/ChildUpdatesInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/GiftInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/InitialDataInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/InputLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/fileio/input/SimulationDataInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/SantaDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/Child.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/ChildAnnualData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/Gift.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/InitialSimulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/YearSimulation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/Comparators.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proiect1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/proiect1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -90,7 +88,7 @@
       <option name="presentableId" value="Default" />
       <updated>1638807258397</updated>
       <workItem from="1641219265471" duration="97000" />
-      <workItem from="1641219448218" duration="12356000" />
+      <workItem from="1641219448218" duration="19137000" />
     </task>
     <servers />
   </component>
