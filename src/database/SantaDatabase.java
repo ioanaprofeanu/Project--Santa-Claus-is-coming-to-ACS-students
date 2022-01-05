@@ -5,11 +5,16 @@ import entities.Gift;
 import fileio.input.ChildInput;
 import fileio.input.GiftInput;
 import fileio.input.InitialDataInput;
+import fileio.input.SimulationDataInput;
 import utils.Comparators;
 
 import java.util.*;
 
 public class SantaDatabase {
+    /**
+     * santa's budget
+     */
+    private double santaBudget;
     /**
      * list of all children
      */
@@ -20,11 +25,12 @@ public class SantaDatabase {
      */
     private Map<String, List<Gift>> gifts;
 
-    public SantaDatabase(InitialDataInput initialDataInput) {
+    public SantaDatabase(SimulationDataInput simulationDataInput) {
+        this.santaBudget = simulationDataInput.getSantaBudget();
         this.children = new ArrayList<>();
-        addChildren(initialDataInput.getChildren());
+        addChildren(simulationDataInput.getInitialData().getChildren());
         this.gifts = new HashMap<>();
-        addGifts(initialDataInput.getSantaGiftsList());
+        addGifts(simulationDataInput.getInitialData().getSantaGiftsList());
     }
 
     /**
@@ -85,5 +91,29 @@ public class SantaDatabase {
         for (Map.Entry<String, List<Gift>> entry : this.gifts.entrySet()) {
             Collections.sort(entry.getValue(), new Comparators.SortGiftsByPriceAsc());
         }
+    }
+
+    public List<ChildAnnualData> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<ChildAnnualData> children) {
+        this.children = children;
+    }
+
+    public Map<String, List<Gift>> getGifts() {
+        return gifts;
+    }
+
+    public void setGifts(Map<String, List<Gift>> gifts) {
+        this.gifts = gifts;
+    }
+
+    @Override
+    public String toString() {
+        return "SantaDatabase{" +
+                "children=" + children +
+                ", gifts=" + gifts +
+                '}';
     }
 }

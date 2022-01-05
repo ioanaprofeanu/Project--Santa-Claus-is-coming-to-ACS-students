@@ -1,5 +1,6 @@
 package entities;
 
+import average.score.strategy.AverageScoreStrategy;
 import fileio.input.ChildInput;
 
 import java.util.ArrayList;
@@ -38,6 +39,15 @@ public class ChildAnnualData extends Child {
         this.niceScoreHistory.add(childInput.getNiceScore());
         this.assignedBudget = 0;
         this.receivedGifts = new ArrayList<>();
+    }
+
+    /**
+     * Use average score strategy to get the average score depending on the
+     * child's age
+     * @param averageScoreStrategy the strategy which calculates the average score
+     */
+    public void calculateAverageScore(AverageScoreStrategy averageScoreStrategy) {
+        this.averageScore = averageScoreStrategy.getAverageScore(this);
     }
 
     public List<String> getGiftsPreferences() {
