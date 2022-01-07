@@ -1,14 +1,6 @@
 package database;
 
-import entities.Child;
-import entities.Gift;
-import fileio.input.ChildInput;
-import fileio.input.GiftInput;
-import fileio.input.InitialDataInput;
 import fileio.input.SimulationDataInput;
-import utils.Comparators;
-
-import java.util.*;
 
 public class SantaDatabase {
     /**
@@ -18,98 +10,17 @@ public class SantaDatabase {
     /**
      * list of all children
      */
-    private List<Child> children;
+    private ChildrenDatabase childrenDatabase;
     /**
      * map of gifts with category as key and the list of
      * gifts sorted in ascending order by price as value
      */
-    private Map<String, List<Gift>> gifts;
+    private GiftsDatabase giftsDatabase;
 
     public SantaDatabase(SimulationDataInput simulationDataInput) {
         this.santaBudget = simulationDataInput.getSantaBudget();
-        this.children = new ArrayList<>();
-        addChildren(simulationDataInput.getInitialData().getChildren());
-        this.gifts = new HashMap<>();
-        addGifts(simulationDataInput.getInitialData().getSantaGiftsList());
-    }
-
-    /**
-     * Adds an input list of children to the list of all children
-     * used both for the initial simulation and the year simulation
-     * @param childrenInput the input list of children
-     */
-    public void addChildren(List<ChildInput> childrenInput) {
-        if (childrenInput == null) {
-            return;
-        }
-        for (ChildInput childInput : childrenInput) {
-            if (childInput.getAge() <= 18) {
-                System.out.println(childInput.getId());
-                Child child = new Child(childInput);
-                children.add(child);
-            }
-        }
-        // sort the list in ascending order by id
-        Collections.sort(this.children, new Comparators.SortChildrenByIdAsc());
-    }
-
-    /**
-     * Adds an input list of gifts to the hashmap of all gifts
-     * used both for the initial simulation and the year simulation
-     * @param giftsInput the input list of gifts
-     */
-    public void addGifts(List<GiftInput> giftsInput) {
-        if (giftsInput == null) {
-            return;
-        }
-        for (GiftInput giftInput : giftsInput) {
-            String giftCategory = giftInput.getCategory();
-            Gift gift = new Gift(giftInput);
-            // if the category already exists in the map
-            if (this.gifts.containsKey(giftCategory)) {
-                // if the gift already exists in the list, don't add it
-                if (this.gifts.get(giftCategory).contains(gift)) {
-                    continue;
-                } else {
-                    // add the gift in the list
-                    this.gifts.get(giftCategory).add(gift);
-                }
-            } else {
-                // create a new list (which will be the value of the new key)
-                List<Gift> newGiftList = new ArrayList<>();
-                newGiftList.add(gift);;
-                this.gifts.put(giftCategory, newGiftList);
-            }
-        }
-        sortGiftsMap();
-    }
-
-    /**
-     * Sort each list of gifts from the hashmap by price in ascending order
-     */
-    public void sortGiftsMap() {
-        if (this.gifts == null) {
-            return;
-        }
-        for (Map.Entry<String, List<Gift>> entry : this.gifts.entrySet()) {
-            Collections.sort(entry.getValue(), new Comparators.SortGiftsByPriceAsc());
-        }
-    }
-
-    public List<Child> getChildren() {
-        return children;
-    }
-
-    public void setChildren(List<Child> children) {
-        this.children = children;
-    }
-
-    public Map<String, List<Gift>> getGifts() {
-        return gifts;
-    }
-
-    public void setGifts(Map<String, List<Gift>> gifts) {
-        this.gifts = gifts;
+        this.childrenDatabase = new ChildrenDatabase(simulationDataInput);
+        this.giftsDatabase = new GiftsDatabase(simulationDataInput);
     }
 
     public double getSantaBudget() {
@@ -120,11 +31,28 @@ public class SantaDatabase {
         this.santaBudget = santaBudget;
     }
 
+    public ChildrenDatabase getChildrenDatabase() {
+        return childrenDatabase;
+    }
+
+    public void setChildrenDatabase(ChildrenDatabase childrenDatabase) {
+        this.childrenDatabase = childrenDatabase;
+    }
+
+    public GiftsDatabase getGiftsDatabase() {
+        return giftsDatabase;
+    }
+
+    public void setGiftsDatabase(GiftsDatabase giftsDatabase) {
+        this.giftsDatabase = giftsDatabase;
+    }
+
     @Override
     public String toString() {
         return "SantaDatabase{" +
-                "children=" + children +
-                ", gifts=" + gifts +
+                "santaBudget=" + santaBudget +
+                ", childrenDatabase=" + childrenDatabase +
+                ", giftsDatabase=" + giftsDatabase +
                 '}';
     }
 }

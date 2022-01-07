@@ -15,7 +15,7 @@ public final class ChildUpdatesInput {
     /**
      * the child's new nice score
      */
-    private double niceScore;
+    private Double niceScore;
     /**
      * the child's new list of gift preferences
      */
@@ -29,11 +29,11 @@ public final class ChildUpdatesInput {
         this.id = id;
     }
 
-    public double getNiceScore() {
+    public Double getNiceScore() {
         return niceScore;
     }
 
-    public void setNiceScore(double niceScore) {
+    public void setNiceScore(Double niceScore) {
         this.niceScore = niceScore;
     }
 

@@ -40,7 +40,7 @@ public abstract class GiftAssigmentSimulation {
         if (santaDatabase == null) {
             return;
         }
-        for (Child child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
             child.calculateAverageScore(AverageScoreStrategyFactory.getInstance().createAverageScoreStrategy(child));
         }
     }
@@ -55,7 +55,7 @@ public abstract class GiftAssigmentSimulation {
             return;
         }
         double sumOfAverageScores = 0;
-        for (Child child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
             sumOfAverageScores += child.getAverageScore();
         }
         this.budgetUnit = (double) santaDatabase.getSantaBudget() / sumOfAverageScores;
@@ -69,7 +69,7 @@ public abstract class GiftAssigmentSimulation {
         if (santaDatabase == null) {
             return;
         }
-        for (Child child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
             child.setAssignedBudget(child.getAverageScore() * this.budgetUnit);
         }
     }
@@ -82,15 +82,15 @@ public abstract class GiftAssigmentSimulation {
         if (santaDatabase == null) {
             return;
         }
-        for (Child child : santaDatabase.getChildren()) {
+        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
             double childAssignedBudget = child.getAssignedBudget();
             List<Gift> newReceivedGifts = new ArrayList<>();
             for (String giftPreferences : child.getGiftsPreferences()) {
                 // if the current gift preference exists in santa's gifts hashmap
-                if (santaDatabase.getGifts().containsKey(giftPreferences)) {
+                if (santaDatabase.getGiftsDatabase().getGifts().containsKey(giftPreferences)) {
                     // the list of gifts is ordered in ascending order by price
                     // so the child may receive the first gift within the gifts list
-                    Gift currentGift = santaDatabase.getGifts().get(giftPreferences).get(0);
+                    Gift currentGift = santaDatabase.getGiftsDatabase().getGifts().get(giftPreferences).get(0);
                     // if the price of the gift is not higher than the remaining budget
                     if (currentGift.getPrice() <= childAssignedBudget) {
                         // add the gift in the child's received gifts list

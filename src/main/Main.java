@@ -31,9 +31,8 @@ public final class Main {
             InputLoader inputLoader = new InputLoader(testPath);
             // initialise the input object
             SimulationDataInput simulationDataInput = inputLoader.readDataInput();
-            System.out.println(simulationDataInput);
             // initialise the output object with all children from all the simulation's years
-            AllYearsChildrenOutput allYearsChildrenOutput =  new AllYearsChildrenOutput();
+            AllYearsChildrenOutput allYearsChildrenOutput = new AllYearsChildrenOutput();
 
             // make the simulation
             CompleteSimulation completeSimulation = new CompleteSimulation(simulationDataInput);

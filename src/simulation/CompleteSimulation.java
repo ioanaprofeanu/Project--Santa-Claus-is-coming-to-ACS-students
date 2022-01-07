@@ -1,7 +1,9 @@
 package simulation;
 
+import commands.*;
 import database.SantaDatabase;
-import entities.Child;
+import entities.AnnualChangeInvoker;
+import fileio.input.AnnualChangesInput;
 import fileio.input.SimulationDataInput;
 import fileio.output.AllYearsChildrenOutput;
 import fileio.output.AnnualChildrenOutput;
@@ -51,7 +53,7 @@ public class CompleteSimulation implements Simulation {
         @Override
         public void makeSimulation(SimulationDataInput simulationDataInput, AllYearsChildrenOutput allYearsChildrenOutput) {
             makeGiftAssigment(santaDatabase);
-            AnnualChildrenOutput initialChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildren());
+            AnnualChildrenOutput initialChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
             allYearsChildrenOutput.getAnnualChildren().add(initialChildrenOutput);
         }
     }
@@ -62,15 +64,43 @@ public class CompleteSimulation implements Simulation {
     private class YearSimulation extends GiftAssigmentSimulation implements Simulation{
         @Override
         public void makeSimulation(SimulationDataInput simulationDataInput, AllYearsChildrenOutput allYearsChildrenOutput) {
-//            santaDatabase.setSantaBudget(simulationDataInput.getAnnualChanges().get(currentSimulationYear).getNewSantaBudget());
-//            makeGiftAssigment(santaDatabase);
-//
-//            for (ChildAnnualData child : santaDatabase.getChildren()) {
-//                child.getOlder();
-//            }
-//
-//            AnnualChildrenOutput yearlyChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildren());
-//            allYearsChildrenOutput.getAnnualChildren().add(yearlyChildrenOutput);
+            AnnualChangesInput annualChangesInput = simulationDataInput.getAnnualChanges().get(currentSimulationYear);
+            // change Santa's budget
+            santaDatabase.setSantaBudget(annualChangesInput.getNewSantaBudget());
+
+            // increase all children's ages
+            // IncreaseChildrenAgeCommand contains the command to increase the ages of all children
+            // When execute() is called on this object, it will execute the method increaseChildrenAge() in ChildrenDatabase
+            IncreaseChildrenAgeCommand increaseAgeCommand = new IncreaseChildrenAgeCommand(santaDatabase.getChildrenDatabase());
+            // Instantiate the invoker and give the command as constructor parameter
+            AnnualChangeInvoker annualChangeInvoker = new AnnualChangeInvoker(increaseAgeCommand);
+            // When makeChange() is called, the increaseAge.execute() is performed
+            annualChangeInvoker.makeChange(annualChangesInput);
+
+            // remove all young adults
+            RemoveYoungAdultsCommand removeYoungAdultsCommand = new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase());
+            annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
+            annualChangeInvoker.makeChange(annualChangesInput);
+
+            // add new children
+            AddNewChildrenCommand addNewChildrenCommand = new AddNewChildrenCommand(santaDatabase.getChildrenDatabase());
+            annualChangeInvoker = new AnnualChangeInvoker(addNewChildrenCommand);
+            annualChangeInvoker.makeChange(annualChangesInput);
+
+            // update children
+            UpdateChildrenCommand updateChildrenCommand = new UpdateChildrenCommand(santaDatabase.getChildrenDatabase());
+            annualChangeInvoker = new AnnualChangeInvoker(updateChildrenCommand);
+            annualChangeInvoker.makeChange(annualChangesInput);
+
+            // add new gifts
+            AddNewGiftsCommand addNewGiftsCommand = new AddNewGiftsCommand(santaDatabase.getGiftsDatabase());
+            annualChangeInvoker = new AnnualChangeInvoker(addNewGiftsCommand);
+            annualChangeInvoker.makeChange(annualChangesInput);
+
+            makeGiftAssigment(santaDatabase);
+
+            AnnualChildrenOutput yearlyChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
+            allYearsChildrenOutput.getAnnualChildren().add(yearlyChildrenOutput);
         }
     }
 }

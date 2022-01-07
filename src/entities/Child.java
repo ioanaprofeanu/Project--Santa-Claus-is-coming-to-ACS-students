@@ -4,6 +4,7 @@ import averagescorestrategy.AverageScoreStrategy;
 import fileio.input.ChildInput;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -71,12 +72,14 @@ public class Child {
         this.firstName = child.getFirstName();
         this.city = child.getCity();
         this.age = child.getAge();
-        this.giftsPreferences = child.getGiftsPreferences();
+        this.giftsPreferences = new ArrayList<>();
+        this.giftsPreferences.addAll(child.getGiftsPreferences());
         this.averageScore = child.getAverageScore();
-        this.niceScoreHistory = child.getNiceScoreHistory();
-        this.niceScoreHistory = child.getNiceScoreHistory();
+        this.niceScoreHistory = new ArrayList<>();
+        this.niceScoreHistory.addAll(child.getNiceScoreHistory());
         this.assignedBudget = child.getAssignedBudget();
-        this.receivedGifts = child.getReceivedGifts();
+        this.receivedGifts = new ArrayList<>();
+        this.receivedGifts.addAll(child.getReceivedGifts());
     }
 
     /**
@@ -88,8 +91,54 @@ public class Child {
         this.averageScore = averageScoreStrategy.getAverageScore(this);
     }
 
+    /**
+     * increase the age of the child by one year
+     */
     public void getOlder() {
         this.age++;
+    }
+
+    /**
+     * Update the child
+     * @param newNiceScore the new to-be-added score
+     * @param newPreferences the new to-be-added preferences
+     */
+    public void updateChild(Double newNiceScore, List<String> newPreferences) {
+        addNiceScore(newNiceScore);
+        addPreferences(newPreferences);
+    }
+
+    /**
+     * Add new score to the nice score list
+     * @param newNiceScore the new nice score
+     */
+    private void addNiceScore(Double newNiceScore) {
+        if (newNiceScore == null) {
+            return;
+        }
+        niceScoreHistory.add(newNiceScore);
+    }
+
+    /**
+     * Add a new list of preferences at the beginning of the already
+     * existing one
+     * @param newPreferences the new list of preferences
+     */
+    private void addPreferences(List<String> newPreferences) {
+        if (newPreferences == null) {
+            return;
+        }
+        // append the initial list of preferences to the new list
+        newPreferences.addAll(this.giftsPreferences);
+        // create a new auxiliary list
+        List<String> auxListPreferences = new ArrayList<>();
+        for (String preference : newPreferences) {
+            if (!auxListPreferences.contains(preference)) {
+                auxListPreferences.add(preference);
+            }
+        }
+
+        this.giftsPreferences = auxListPreferences;
     }
 
     public int getId() {

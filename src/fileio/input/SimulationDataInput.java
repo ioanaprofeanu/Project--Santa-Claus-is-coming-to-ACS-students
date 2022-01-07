@@ -50,10 +50,6 @@ public final class SimulationDataInput {
         this.initialData = initialData;
     }
 
-    public List<AnnualChangesInput> getAnnualChangesInputs() {
-        return annualChanges;
-    }
-
     public List<AnnualChangesInput> getAnnualChanges() {
         return annualChanges;
     }
