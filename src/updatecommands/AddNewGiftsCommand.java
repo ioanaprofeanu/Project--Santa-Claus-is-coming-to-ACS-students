@@ -1,4 +1,4 @@
-package commands;
+package updatecommands;
 
 import database.GiftsDatabase;
 import fileio.input.AnnualChangesInput;

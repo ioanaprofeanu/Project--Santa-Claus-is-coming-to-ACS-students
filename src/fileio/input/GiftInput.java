@@ -1,7 +1,7 @@
 package fileio.input;
 
 /**
- * Information about a gift, retrieved from parting the input files
+ * Information about a gift, retrieved from parsing the input files
  */
 public final class GiftInput {
     /**

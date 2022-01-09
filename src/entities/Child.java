@@ -136,7 +136,7 @@ public final class Child {
                 auxListPreferences.add(preference);
             }
         }
-
+        // the actual list will be equal to the newly created one
         this.giftsPreferences = auxListPreferences;
     }
 

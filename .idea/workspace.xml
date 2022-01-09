@@ -6,40 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/AverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/AverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/AverageScoreStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/AverageScoreStrategyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/BabyAverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/BabyAverageScoreStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/KidAverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/KidAverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/TeenAverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/TeenAverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddNewChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddNewChildrenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddNewGiftsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/AddNewGiftsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/IncreaseChildrenAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/IncreaseChildrenAgeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/RemoveYoungAdultsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/RemoveYoungAdultsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/UpdateChildrenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ChildrenDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ChildrenDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddNewChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AddNewChildrenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/AddNewGiftsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AddNewGiftsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/IncreaseChildrenAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/IncreaseChildrenAgeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/RemoveYoungAdultsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/RemoveYoungAdultsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/UpdateChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/UpdateChildrenCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/GiftsDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/GiftsDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/SantaDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/SantaDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/AnnualChangeInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/AnnualChangeInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/AnnualChangeInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AnnualChangeInvoker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/entities/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Gift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/AnnualChangesInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/AnnualChangesInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileio/input/ChildInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/ChildInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileio/input/ChildUpdatesInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/ChildUpdatesInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileio/input/GiftInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/GiftInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/InitialDataInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/InitialDataInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/InputLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/SimulationDataInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/SimulationDataInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/output/AllYearsChildrenOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/output/AllYearsChildrenOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/output/AnnualChildrenOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/output/AnnualChildrenOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/output/OutputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/output/OutputLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Comparators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Comparators.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +72,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -123,7 +107,7 @@
       <workItem from="1641219265471" duration="97000" />
       <workItem from="1641219448218" duration="45311000" />
       <workItem from="1641501981442" duration="14824000" />
-      <workItem from="1641667390745" duration="6600000" />
+      <workItem from="1641667390745" duration="21131000" />
     </task>
     <servers />
   </component>

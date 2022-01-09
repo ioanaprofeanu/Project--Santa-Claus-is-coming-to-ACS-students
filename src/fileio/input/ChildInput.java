@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Information about a child, retrieved from parting the input file
+ * Information about a child, retrieved from parsing the input file
  */
 public final class ChildInput {
     /**

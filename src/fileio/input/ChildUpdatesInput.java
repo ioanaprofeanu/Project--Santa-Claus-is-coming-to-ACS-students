@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  * Information about the data that needs to be changed for a certain child,
- * retrieved from parting the input file
+ * retrieved from parsing the input file
  */
 public final class ChildUpdatesInput {
     /**

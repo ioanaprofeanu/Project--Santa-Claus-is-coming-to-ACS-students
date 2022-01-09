@@ -1,6 +1,5 @@
-package entities;
+package updatecommands;
 
-import commands.Command;
 import fileio.input.AnnualChangesInput;
 
 /**
@@ -11,7 +10,7 @@ public class AnnualChangeInvoker {
     /**
      * the to-be-executed command
      */
-    private Command annualChangeCommand;
+    private final Command annualChangeCommand;
 
     public AnnualChangeInvoker(final Command annualChangeCommand) {
         this.annualChangeCommand = annualChangeCommand;

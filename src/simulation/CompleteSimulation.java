@@ -1,12 +1,12 @@
 package simulation;
 
-import commands.AddNewChildrenCommand;
-import commands.IncreaseChildrenAgeCommand;
-import commands.RemoveYoungAdultsCommand;
-import commands.UpdateChildrenCommand;
-import commands.AddNewGiftsCommand;
+import updatecommands.AddNewChildrenCommand;
+import updatecommands.IncreaseChildrenAgeCommand;
+import updatecommands.RemoveYoungAdultsCommand;
+import updatecommands.UpdateChildrenCommand;
+import updatecommands.AddNewGiftsCommand;
 import database.SantaDatabase;
-import entities.AnnualChangeInvoker;
+import updatecommands.AnnualChangeInvoker;
 import fileio.input.AnnualChangesInput;
 import fileio.input.SimulationDataInput;
 import fileio.output.AllYearsChildrenOutput;
@@ -71,6 +71,7 @@ public class CompleteSimulation implements Simulation {
                                    final AllYearsChildrenOutput allYearsChildrenOutput) {
             // assign the gifts
             super.makeSimulation(santaDatabase);
+            // add the children list to the output list of children from all years
             AnnualChildrenOutput initialChildrenOutput =
                     new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
             allYearsChildrenOutput.getAnnualChildren().add(initialChildrenOutput);
@@ -96,38 +97,45 @@ public class CompleteSimulation implements Simulation {
 
             // increase all children's ages
             // IncreaseChildrenAgeCommand contains the command to increase the ages of all children
-            // When execute() is called on this object,
-            // it will execute the method increaseChildrenAge() in ChildrenDatabase
             IncreaseChildrenAgeCommand increaseAgeCommand =
                     new IncreaseChildrenAgeCommand(santaDatabase.getChildrenDatabase());
-            // Instantiate the invoker and give the command as constructor parameter
+            // instantiate the invoker and give the command as constructor parameter
             AnnualChangeInvoker annualChangeInvoker =
                     new AnnualChangeInvoker(increaseAgeCommand);
-            // When makeChange() is called, the increaseAge.execute() is performed
+            // when makeChange() is called, the increaseChildrenAge() method is performed
+            // in ChildrenDatabase
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // remove all young adults
             RemoveYoungAdultsCommand removeYoungAdultsCommand =
                     new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
+            // when makeChange() is called, the removeYoungAdults() method is performed
+            // in ChildrenDatabase
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // add new children
             AddNewChildrenCommand addNewChildrenCommand =
                     new AddNewChildrenCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(addNewChildrenCommand);
+            // when makeChange() is called, the addChildren() method is performed
+            // in ChildrenDatabase
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // update children
             UpdateChildrenCommand updateChildrenCommand =
                     new UpdateChildrenCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(updateChildrenCommand);
+            // when makeChange() is called, the updateChildrenById() method is performed
+            // in ChildrenDatabase
             annualChangeInvoker.makeChange(annualChangesInput);
 
-            // add new gifts
+            // add new gifts, similar to the previous age increase
             AddNewGiftsCommand addNewGiftsCommand =
                     new AddNewGiftsCommand(santaDatabase.getGiftsDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(addNewGiftsCommand);
+            // when makeChange() is called, the addGifts() method is performed
+            // in GiftsDatabase
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // assign the gifts

@@ -9,7 +9,6 @@ import fileio.output.OutputLoader;
 import simulation.CompleteSimulation;
 
 import java.io.File;
-import java.io.IOException;
 
 /**
  * Class used to run the code
@@ -24,7 +23,7 @@ public final class Main {
      * @param args
      *          the arguments used to call the main method
      */
-    public static void main(final String[] args) throws IOException {
+    public static void main(final String[] args) {
         // create the output directory
         new File(Constants.OUTPUT).mkdirs();
 
@@ -39,6 +38,7 @@ public final class Main {
             AllYearsChildrenOutput allYearsChildrenOutput = new AllYearsChildrenOutput();
 
             // make the simulation
+            assert simulationDataInput != null;
             CompleteSimulation completeSimulation = new CompleteSimulation(simulationDataInput);
             completeSimulation.makeSimulation(simulationDataInput, allYearsChildrenOutput);
 

@@ -17,7 +17,6 @@ public class KidAverageScoreStrategy implements AverageScoreStrategy {
         for (Double score : child.getNiceScoreHistory()) {
             sumOfScores += score;
         }
-
         return sumOfScores / child.getNiceScoreHistory().size();
     }
 }

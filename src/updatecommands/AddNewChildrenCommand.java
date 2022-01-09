@@ -1,4 +1,4 @@
-package commands;
+package updatecommands;
 
 import database.ChildrenDatabase;
 import fileio.input.AnnualChangesInput;

@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 public final class GiftsDatabase {
     /**
-     * map of gifts with category as key and the list of
+     * Map of gifts with category as key and the list of
      * gifts sorted in ascending order by price as value
      */
     private Map<String, List<Gift>> gifts;
@@ -52,11 +52,12 @@ public final class GiftsDatabase {
                 this.gifts.put(giftCategory, newGiftList);
             }
         }
+        // sort the map
         sortGiftsMap();
     }
 
     /**
-     * Sort each list of gifts from the hashmap by price in ascending order
+     * Sort each list of gifts from the map by price in ascending order
      */
     public void sortGiftsMap() {
         if (this.gifts == null) {

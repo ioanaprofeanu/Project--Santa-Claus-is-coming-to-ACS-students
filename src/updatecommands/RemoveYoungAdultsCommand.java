@@ -1,4 +1,4 @@
-package commands;
+package updatecommands;
 
 import database.ChildrenDatabase;
 import fileio.input.AnnualChangesInput;
@@ -11,7 +11,7 @@ public class RemoveYoungAdultsCommand implements Command {
     /**
      * instance of the object the command will be performed on
      */
-    private ChildrenDatabase childrenDatabase;
+    private final ChildrenDatabase childrenDatabase;
 
     public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase) {
         this.childrenDatabase = childrenDatabase;

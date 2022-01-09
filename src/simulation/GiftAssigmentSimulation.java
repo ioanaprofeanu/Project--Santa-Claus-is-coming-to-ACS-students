@@ -7,6 +7,7 @@ import entities.Gift;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Abstract class which handles the gift assigment part of the simulation
@@ -41,8 +42,8 @@ public abstract class GiftAssigmentSimulation implements Simulation {
             return;
         }
         for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
-            child.calculateAverageScore(AverageScoreStrategyFactory
-                    .getInstance().createAverageScoreStrategy(child));
+            child.calculateAverageScore(Objects.requireNonNull(AverageScoreStrategyFactory
+                    .getInstance().createAverageScoreStrategy(child)));
         }
     }
 
@@ -101,6 +102,7 @@ public abstract class GiftAssigmentSimulation implements Simulation {
                     }
                 }
             }
+            // set the child's list of received gifts
             child.setReceivedGifts(newReceivedGifts);
         }
     }
