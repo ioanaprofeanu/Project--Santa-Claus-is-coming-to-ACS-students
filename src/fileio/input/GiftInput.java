@@ -5,15 +5,15 @@ package fileio.input;
  */
 public final class GiftInput {
     /**
-     * the product's name
+     * The product's name
      */
     private String productName;
     /**
-     * the product's price
+     * The product's price
      */
     private double price;
     /**
-     * the product's category
+     * The product's category
      */
     private String category;
 
@@ -21,7 +21,7 @@ public final class GiftInput {
         return productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(final String productName) {
         this.productName = productName;
     }
 
@@ -29,7 +29,7 @@ public final class GiftInput {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(final double price) {
         this.price = price;
     }
 
@@ -37,16 +37,16 @@ public final class GiftInput {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(final String category) {
         this.category = category;
     }
 
     @Override
     public String toString() {
-        return "GiftInput{" +
-                "productName='" + productName + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
+        return "GiftInput{"
+                + "productName='" + productName + '\''
+                + ", price=" + price
+                + ", category='" + category + '\''
+                + '}';
     }
 }

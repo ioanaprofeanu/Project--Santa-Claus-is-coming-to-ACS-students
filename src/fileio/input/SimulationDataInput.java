@@ -1,8 +1,5 @@
 package fileio.input;
 
-import fileio.input.AnnualChangesInput;
-import fileio.input.InitialDataInput;
-
 import java.util.List;
 
 /**
@@ -30,7 +27,7 @@ public final class SimulationDataInput {
         return numberOfYears;
     }
 
-    public void setNumberOfYears(int numberOfYears) {
+    public void setNumberOfYears(final int numberOfYears) {
         this.numberOfYears = numberOfYears;
     }
 
@@ -38,7 +35,7 @@ public final class SimulationDataInput {
         return santaBudget;
     }
 
-    public void setSantaBudget(double santaBudget) {
+    public void setSantaBudget(final double santaBudget) {
         this.santaBudget = santaBudget;
     }
 
@@ -46,7 +43,7 @@ public final class SimulationDataInput {
         return initialData;
     }
 
-    public void setInitialData(InitialDataInput initialData) {
+    public void setInitialData(final InitialDataInput initialData) {
         this.initialData = initialData;
     }
 
@@ -54,17 +51,17 @@ public final class SimulationDataInput {
         return annualChanges;
     }
 
-    public void setAnnualChanges(List<AnnualChangesInput> annualChanges) {
+    public void setAnnualChanges(final List<AnnualChangesInput> annualChanges) {
         this.annualChanges = annualChanges;
     }
 
     @Override
     public String toString() {
-        return "SimulationDataInput{" +
-                "numberOfYears=" + numberOfYears +
-                ", santaBudget=" + santaBudget +
-                ", initialData=" + initialData +
-                ", annualChanges=" + annualChanges +
-                '}';
+        return "SimulationDataInput{"
+                + "numberOfYears=" + numberOfYears
+                + ", santaBudget=" + santaBudget
+                + ", initialData=" + initialData
+                + ", annualChanges=" + annualChanges
+                + '}';
     }
 }

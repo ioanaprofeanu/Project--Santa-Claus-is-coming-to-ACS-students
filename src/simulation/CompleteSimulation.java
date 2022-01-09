@@ -1,6 +1,10 @@
 package simulation;
 
-import commands.*;
+import commands.AddNewChildrenCommand;
+import commands.IncreaseChildrenAgeCommand;
+import commands.RemoveYoungAdultsCommand;
+import commands.UpdateChildrenCommand;
+import commands.AddNewGiftsCommand;
 import database.SantaDatabase;
 import entities.AnnualChangeInvoker;
 import fileio.input.AnnualChangesInput;
@@ -15,7 +19,7 @@ public class CompleteSimulation implements Simulation {
     /**
      * the number of years the simulation is run in
      */
-    private int numberOfYears;
+    private final int numberOfYears;
     /**
      * the number of years the simulation is run in
      */
@@ -24,16 +28,23 @@ public class CompleteSimulation implements Simulation {
      *  The database with the values about children and gifts
      *  retrieved from the input file
      */
-    private SantaDatabase santaDatabase;
+    private final SantaDatabase santaDatabase;
 
-    public CompleteSimulation(SimulationDataInput simulationDataInput) {
+    public CompleteSimulation(final SimulationDataInput simulationDataInput) {
         this.numberOfYears = simulationDataInput.getNumberOfYears();
         this.santaDatabase = new SantaDatabase(simulationDataInput);
         this.currentSimulationYear = 0;
     }
 
+    /**
+     * Perform the simulation by binding together the two parts of it (the initial
+     * and the yearly simulations)
+     * @param simulationDataInput the input data
+     * @param allYearsChildrenOutput the output data
+     */
     @Override
-    public void makeSimulation(SimulationDataInput simulationDataInput, AllYearsChildrenOutput allYearsChildrenOutput) {
+    public void makeSimulation(final SimulationDataInput simulationDataInput,
+                               final AllYearsChildrenOutput allYearsChildrenOutput) {
         // make the initial part of the simulation
         InitialSimulation initialSimulation = new InitialSimulation();
         initialSimulation.makeSimulation(simulationDataInput, allYearsChildrenOutput);
@@ -50,10 +61,18 @@ public class CompleteSimulation implements Simulation {
      * Class which provides the implementation of the initial simulation
      */
     private class InitialSimulation extends GiftAssigmentSimulation implements Simulation {
+        /**
+         * Perform the initial simulation
+         * @param simulationDataInput the input data
+         * @param allYearsChildrenOutput the output data
+         */
         @Override
-        public void makeSimulation(SimulationDataInput simulationDataInput, AllYearsChildrenOutput allYearsChildrenOutput) {
-            makeGiftAssigment(santaDatabase);
-            AnnualChildrenOutput initialChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
+        public void makeSimulation(final SimulationDataInput simulationDataInput,
+                                   final AllYearsChildrenOutput allYearsChildrenOutput) {
+            // assign the gifts
+            super.makeSimulation(santaDatabase);
+            AnnualChildrenOutput initialChildrenOutput =
+                    new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
             allYearsChildrenOutput.getAnnualChildren().add(initialChildrenOutput);
         }
     }
@@ -61,45 +80,62 @@ public class CompleteSimulation implements Simulation {
     /**
      * Class which provides the implementation of a yearly simulation
      */
-    private class YearSimulation extends GiftAssigmentSimulation implements Simulation{
+    private class YearSimulation extends GiftAssigmentSimulation implements Simulation {
+        /**
+         * Perform a yearly simulation
+         * @param simulationDataInput the input data
+         * @param allYearsChildrenOutput the output data
+         */
         @Override
-        public void makeSimulation(SimulationDataInput simulationDataInput, AllYearsChildrenOutput allYearsChildrenOutput) {
-            AnnualChangesInput annualChangesInput = simulationDataInput.getAnnualChanges().get(currentSimulationYear);
+        public void makeSimulation(final SimulationDataInput simulationDataInput,
+                                   final AllYearsChildrenOutput allYearsChildrenOutput) {
+            AnnualChangesInput annualChangesInput =
+                    simulationDataInput.getAnnualChanges().get(currentSimulationYear);
             // change Santa's budget
             santaDatabase.setSantaBudget(annualChangesInput.getNewSantaBudget());
 
             // increase all children's ages
             // IncreaseChildrenAgeCommand contains the command to increase the ages of all children
-            // When execute() is called on this object, it will execute the method increaseChildrenAge() in ChildrenDatabase
-            IncreaseChildrenAgeCommand increaseAgeCommand = new IncreaseChildrenAgeCommand(santaDatabase.getChildrenDatabase());
+            // When execute() is called on this object,
+            // it will execute the method increaseChildrenAge() in ChildrenDatabase
+            IncreaseChildrenAgeCommand increaseAgeCommand =
+                    new IncreaseChildrenAgeCommand(santaDatabase.getChildrenDatabase());
             // Instantiate the invoker and give the command as constructor parameter
-            AnnualChangeInvoker annualChangeInvoker = new AnnualChangeInvoker(increaseAgeCommand);
+            AnnualChangeInvoker annualChangeInvoker =
+                    new AnnualChangeInvoker(increaseAgeCommand);
             // When makeChange() is called, the increaseAge.execute() is performed
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // remove all young adults
-            RemoveYoungAdultsCommand removeYoungAdultsCommand = new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase());
+            RemoveYoungAdultsCommand removeYoungAdultsCommand =
+                    new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // add new children
-            AddNewChildrenCommand addNewChildrenCommand = new AddNewChildrenCommand(santaDatabase.getChildrenDatabase());
+            AddNewChildrenCommand addNewChildrenCommand =
+                    new AddNewChildrenCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(addNewChildrenCommand);
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // update children
-            UpdateChildrenCommand updateChildrenCommand = new UpdateChildrenCommand(santaDatabase.getChildrenDatabase());
+            UpdateChildrenCommand updateChildrenCommand =
+                    new UpdateChildrenCommand(santaDatabase.getChildrenDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(updateChildrenCommand);
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // add new gifts
-            AddNewGiftsCommand addNewGiftsCommand = new AddNewGiftsCommand(santaDatabase.getGiftsDatabase());
+            AddNewGiftsCommand addNewGiftsCommand =
+                    new AddNewGiftsCommand(santaDatabase.getGiftsDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(addNewGiftsCommand);
             annualChangeInvoker.makeChange(annualChangesInput);
 
-            makeGiftAssigment(santaDatabase);
+            // assign the gifts
+            super.makeSimulation(santaDatabase);
 
-            AnnualChildrenOutput yearlyChildrenOutput = new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
+            // add the children list to the output list of children from all years
+            AnnualChildrenOutput yearlyChildrenOutput =
+                    new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
             allYearsChildrenOutput.getAnnualChildren().add(yearlyChildrenOutput);
         }
     }

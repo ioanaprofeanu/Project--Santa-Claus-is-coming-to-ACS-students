@@ -3,7 +3,10 @@ package fileio.output;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AllYearsChildrenOutput {
+/**
+ * Class which contains the list of annual children
+ */
+public final class AllYearsChildrenOutput {
     /**
      * List of children from all years
      */
@@ -17,7 +20,14 @@ public class AllYearsChildrenOutput {
         return annualChildren;
     }
 
-    public void setAnnualChildren(List<AnnualChildrenOutput> annualChildren) {
+    public void setAnnualChildren(final List<AnnualChildrenOutput> annualChildren) {
         this.annualChildren = annualChildren;
+    }
+
+    @Override
+    public String toString() {
+        return "AllYearsChildrenOutput{"
+                + "annualChildren=" + annualChildren
+                + '}';
     }
 }

@@ -9,15 +9,15 @@ import java.util.List;
  */
 public final class ChildUpdatesInput {
     /**
-     * the child's id
+     * The child's id
      */
     private int id;
     /**
-     * the child's new nice score
+     * The child's new nice score
      */
     private Double niceScore;
     /**
-     * the child's new list of gift preferences
+     * The child's new list of gift preferences
      */
     private List<String> giftsPreferences;
 
@@ -25,7 +25,7 @@ public final class ChildUpdatesInput {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -33,7 +33,7 @@ public final class ChildUpdatesInput {
         return niceScore;
     }
 
-    public void setNiceScore(Double niceScore) {
+    public void setNiceScore(final Double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -41,16 +41,16 @@ public final class ChildUpdatesInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(ArrayList<String> giftsPreferences) {
+    public void setGiftsPreferences(final ArrayList<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
     @Override
     public String toString() {
-        return "ChildrenUpdatesInput{" +
-                "id=" + id +
-                ", niceScore=" + niceScore +
-                ", giftsPreferences=" + giftsPreferences +
-                '}';
+        return "ChildrenUpdatesInput{"
+                + "id=" + id
+                + ", niceScore=" + niceScore
+                + ", giftsPreferences=" + giftsPreferences
+                + '}';
     }
 }

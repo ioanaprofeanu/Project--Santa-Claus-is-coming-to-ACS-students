@@ -13,6 +13,16 @@ public final class Constants {
     public static final Integer CHECKSTYLE_POINTS = 10;
     public static final Integer TESTS_NUMBER_SMALL = 15;
 
+    // values used for calculating the child's age category
+    // and the average score
+    public static final Integer BABY_LOWER_VALUE = 0;
+    public static final Integer BABY_UPPER_VALUE = 4;
+    public static final Integer CHILD_LOWER_VALUE = 5;
+    public static final Integer CHILD_UPPER_VALUE = 11;
+    public static final Integer TEEN_LOWER_VALUE = 12;
+    public static final Integer TEEN_UPPER_VALUE = 18;
+    public static final Integer BABY_AVERAGE_SCORE = 10;
+
     private Constants() {
         //constructor for checkstyle
     }

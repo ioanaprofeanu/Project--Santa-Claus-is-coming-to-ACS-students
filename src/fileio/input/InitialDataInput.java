@@ -1,8 +1,5 @@
 package fileio.input;
 
-import fileio.input.ChildInput;
-import fileio.input.GiftInput;
-
 import java.util.List;
 
 /**
@@ -10,11 +7,11 @@ import java.util.List;
  */
 public final class InitialDataInput {
     /**
-     * list of children received at input
+     * List of children received at input
      */
     private List<ChildInput> children;
     /**
-     * list of gifts received at input
+     * List of gifts received at input
      */
     private List<GiftInput> santaGiftsList;
 
@@ -22,7 +19,7 @@ public final class InitialDataInput {
         return children;
     }
 
-    public void setChildren(List<ChildInput> children) {
+    public void setChildren(final List<ChildInput> children) {
         this.children = children;
     }
 
@@ -30,15 +27,15 @@ public final class InitialDataInput {
         return santaGiftsList;
     }
 
-    public void setSantaGiftsList(List<GiftInput> santaGiftsList) {
+    public void setSantaGiftsList(final List<GiftInput> santaGiftsList) {
         this.santaGiftsList = santaGiftsList;
     }
 
     @Override
     public String toString() {
-        return "InitialDataInput{" +
-                "children=" + children +
-                ", santaGiftsList=" + santaGiftsList +
-                '}';
+        return "InitialDataInput{"
+                + "children=" + children
+                + ", santaGiftsList=" + santaGiftsList
+                + '}';
     }
 }

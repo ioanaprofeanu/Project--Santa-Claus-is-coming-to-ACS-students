@@ -1,23 +1,28 @@
 package commands;
 
 import database.ChildrenDatabase;
-import database.SantaDatabase;
 import fileio.input.AnnualChangesInput;
-import fileio.input.SimulationDataInput;
 
+/**
+ * The class which contains the concrete command which removes the young
+ * adults from the list of children within the database
+ */
 public class RemoveYoungAdultsCommand implements Command {
     /**
      * instance of the object the command will be performed on
      */
-
     private ChildrenDatabase childrenDatabase;
 
-    public RemoveYoungAdultsCommand(ChildrenDatabase childrenDatabase) {
+    public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase) {
         this.childrenDatabase = childrenDatabase;
     }
 
+    /**
+     * Execute the command which removes children from list within the database
+     * @param annualChangesInput the input annual changes
+     */
     @Override
-    public void execute(AnnualChangesInput annualChangesInput) {
+    public void execute(final AnnualChangesInput annualChangesInput) {
         childrenDatabase.removeYoungAdults();
     }
 }

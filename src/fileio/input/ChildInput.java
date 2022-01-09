@@ -40,7 +40,7 @@ public final class ChildInput {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -48,7 +48,7 @@ public final class ChildInput {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -56,7 +56,7 @@ public final class ChildInput {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -64,7 +64,7 @@ public final class ChildInput {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(final int age) {
         this.age = age;
     }
 
@@ -72,7 +72,7 @@ public final class ChildInput {
         return city;
     }
 
-    public void setCity(String city) {
+    public void setCity(final String city) {
         this.city = city;
     }
 
@@ -80,7 +80,7 @@ public final class ChildInput {
         return niceScore;
     }
 
-    public void setNiceScore(double niceScore) {
+    public void setNiceScore(final double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -88,20 +88,20 @@ public final class ChildInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<String> giftsPreferences) {
+    public void setGiftsPreferences(final List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
     @Override
     public String toString() {
-        return "ChildInput{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", age=" + age +
-                ", city='" + city + '\'' +
-                ", niceScore=" + niceScore +
-                ", giftsPreferences=" + giftsPreferences +
-                '}';
+        return "ChildInput{"
+                + "id=" + id
+                + ", lastName='" + lastName + '\''
+                + ", firstName='" + firstName + '\''
+                + ", age=" + age
+                + ", city='" + city + '\''
+                + ", niceScore=" + niceScore
+                + ", giftsPreferences=" + giftsPreferences
+                + '}';
     }
 }

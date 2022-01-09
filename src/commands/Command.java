@@ -1,8 +1,14 @@
 package commands;
 
 import fileio.input.AnnualChangesInput;
-import fileio.input.SimulationDataInput;
 
+/**
+ * The command interface
+ */
 public interface Command {
-    public void execute(AnnualChangesInput annualChangesInput);
+    /**
+     * Method which executes the command
+     * @param annualChangesInput the input annual changes
+     */
+    void execute(AnnualChangesInput annualChangesInput);
 }

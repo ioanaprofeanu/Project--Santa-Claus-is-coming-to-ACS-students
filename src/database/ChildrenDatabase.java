@@ -1,20 +1,27 @@
 package database;
 
+import common.Constants;
 import entities.Child;
 import fileio.input.ChildInput;
 import fileio.input.ChildUpdatesInput;
 import fileio.input.SimulationDataInput;
 import utils.Comparators;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Objects;
 
-public class ChildrenDatabase {
+/**
+ * Database which contains a list of all children and methods regarding changes to the list
+ */
+public final class ChildrenDatabase {
     /**
-     * list of all children
+     * List of all children
      */
     private List<Child> children;
 
-    public ChildrenDatabase(SimulationDataInput simulationDataInput) {
+    public ChildrenDatabase(final SimulationDataInput simulationDataInput) {
         this.children = new ArrayList<>();
         addChildren(simulationDataInput.getInitialData().getChildren());
     }
@@ -24,12 +31,12 @@ public class ChildrenDatabase {
      * used both for the initial simulation and the year simulation
      * @param childrenInput the input list of children
      */
-    public void addChildren(List<ChildInput> childrenInput) {
+    public void addChildren(final List<ChildInput> childrenInput) {
         if (childrenInput == null) {
             return;
         }
         for (ChildInput childInput : childrenInput) {
-            if (childInput.getAge() <= 18) {
+            if (childInput.getAge() <= Constants.TEEN_UPPER_VALUE) {
                 Child child = new Child(childInput);
                 children.add(child);
             }
@@ -42,7 +49,7 @@ public class ChildrenDatabase {
      * Remove all young adults from the list of children
      */
     public void removeYoungAdults() {
-        children.removeIf(child -> child.getAge() > 18);
+        children.removeIf(child -> child.getAge() > Constants.TEEN_UPPER_VALUE);
     }
 
     /**
@@ -59,7 +66,7 @@ public class ChildrenDatabase {
      * @param id the given id
      * @return the found child
      */
-    private Child getChildById(int id) {
+    private Child getChildById(final int id) {
         for (Child child : children) {
             if (child.getId() == id) {
                 return child;
@@ -72,13 +79,15 @@ public class ChildrenDatabase {
      * Update all children from the list of children updates
      * @param childrenUpdates list of to-be-updated children
      */
-    public void updateChildrenById(List<ChildUpdatesInput> childrenUpdates) {
+    public void updateChildrenById(final List<ChildUpdatesInput> childrenUpdates) {
         if (childrenUpdates == null) {
             return;
         }
         for (ChildUpdatesInput childUpdatesInput : childrenUpdates) {
             if (getChildById(childUpdatesInput.getId()) != null) {
-                getChildById(childUpdatesInput.getId()).updateChild(childUpdatesInput.getNiceScore(), childUpdatesInput.getGiftsPreferences());
+                Objects.requireNonNull(getChildById(childUpdatesInput.getId())).
+                        updateChild(childUpdatesInput.getNiceScore(),
+                                childUpdatesInput.getGiftsPreferences());
             }
         }
     }
@@ -87,14 +96,14 @@ public class ChildrenDatabase {
         return children;
     }
 
-    public void setChildren(List<Child> children) {
+    public void setChildren(final List<Child> children) {
         this.children = children;
     }
 
     @Override
     public String toString() {
-        return "ChildrenDatabase{" +
-                "children=" + children +
-                '}';
+        return "ChildrenDatabase{"
+                + "children=" + children
+                + '}';
     }
 }

@@ -2,7 +2,10 @@ package database;
 
 import fileio.input.SimulationDataInput;
 
-public class SantaDatabase {
+/**
+ * Class which contains Santa's databases of children and gifts
+ */
+public final class SantaDatabase {
     /**
      * santa's budget
      */
@@ -10,14 +13,14 @@ public class SantaDatabase {
     /**
      * list of all children
      */
-    private ChildrenDatabase childrenDatabase;
+    private final ChildrenDatabase childrenDatabase;
     /**
      * map of gifts with category as key and the list of
      * gifts sorted in ascending order by price as value
      */
-    private GiftsDatabase giftsDatabase;
+    private final GiftsDatabase giftsDatabase;
 
-    public SantaDatabase(SimulationDataInput simulationDataInput) {
+    public SantaDatabase(final SimulationDataInput simulationDataInput) {
         this.santaBudget = simulationDataInput.getSantaBudget();
         this.childrenDatabase = new ChildrenDatabase(simulationDataInput);
         this.giftsDatabase = new GiftsDatabase(simulationDataInput);
@@ -27,7 +30,7 @@ public class SantaDatabase {
         return santaBudget;
     }
 
-    public void setSantaBudget(double santaBudget) {
+    public void setSantaBudget(final double santaBudget) {
         this.santaBudget = santaBudget;
     }
 
@@ -35,24 +38,16 @@ public class SantaDatabase {
         return childrenDatabase;
     }
 
-    public void setChildrenDatabase(ChildrenDatabase childrenDatabase) {
-        this.childrenDatabase = childrenDatabase;
-    }
-
     public GiftsDatabase getGiftsDatabase() {
         return giftsDatabase;
     }
 
-    public void setGiftsDatabase(GiftsDatabase giftsDatabase) {
-        this.giftsDatabase = giftsDatabase;
-    }
-
     @Override
     public String toString() {
-        return "SantaDatabase{" +
-                "santaBudget=" + santaBudget +
-                ", childrenDatabase=" + childrenDatabase +
-                ", giftsDatabase=" + giftsDatabase +
-                '}';
+        return "SantaDatabase{"
+                + "santaBudget=" + santaBudget
+                + ", childrenDatabase=" + childrenDatabase
+                + ", giftsDatabase=" + giftsDatabase
+                + '}';
     }
 }

@@ -6,22 +6,29 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Class which writes the output data into the given output path
+ */
 public class OutputLoader {
     /**
      * the output path
      */
-    private String outputPath;
+    private final String outputPath;
     /**
      * the to-be-written data
      */
-    private AllYearsChildrenOutput simulationDataOutput;
+    private final AllYearsChildrenOutput simulationDataOutput;
 
-    public OutputLoader(String outputPath, AllYearsChildrenOutput simulationDataOutput) {
+    public OutputLoader(final String outputPath,
+                        final AllYearsChildrenOutput simulationDataOutput) {
         this.outputPath = outputPath;
         this.simulationDataOutput = simulationDataOutput;
     }
 
-    public void writeDataOutput() throws IOException {
+    /**
+     * Write the data into the output path using Object Mapper
+     */
+    public void writeDataOutput() {
         ObjectMapper mapper = new ObjectMapper();
         try {
             ObjectWriter writer = mapper.writerWithDefaultPrettyPrinter();
@@ -29,21 +36,5 @@ public class OutputLoader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public String getOutputPath() {
-        return outputPath;
-    }
-
-    public void setOutputPath(String outputPath) {
-        this.outputPath = outputPath;
-    }
-
-    public AllYearsChildrenOutput getSimulationDataOutput() {
-        return simulationDataOutput;
-    }
-
-    public void setSimulationDataOutput(AllYearsChildrenOutput simulationDataOutput) {
-        this.simulationDataOutput = simulationDataOutput;
     }
 }

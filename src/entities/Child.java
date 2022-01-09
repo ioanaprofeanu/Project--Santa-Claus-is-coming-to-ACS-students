@@ -4,55 +4,54 @@ import averagescorestrategy.AverageScoreStrategy;
 import fileio.input.ChildInput;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
- * General information about a child
+ * Information about a child and operations regarding its characteristics
  */
-public class Child {
+public final class Child {
     /**
-     * child ID
+     * Child's ID
      */
-    private int id;
+    private final int id;
     /**
-     * child last name
+     * Child's last name
      */
-    private String lastName;
+    private final String lastName;
     /**
-     * child first name
+     * Child's first name
      */
-    private String firstName;
+    private final String firstName;
     /**
-     * the city the child lives in
+     * The city the child lives in
      */
-    private String city;
+    private final String city;
     /**
-     * child age
+     * Child's age
      */
     private int age;
     /**
-     * the list of gift preferences
+     * The list of gift preferences
      */
     private List<String> giftsPreferences;
     /**
-     * child's average score
+     * Child's average score
      */
     private double averageScore;
     /**
-     * list of all scores
+     * List of all scores
      */
     private List<Double> niceScoreHistory;
     /**
-     * assigned budget
+     * Assigned budget
      */
     private double assignedBudget;
     /**
-     * list of received gifts
+     * List of received gifts
      */
     private List<Gift> receivedGifts;
 
-    public Child(ChildInput childInput) {
+    public Child(final ChildInput childInput) {
         this.id = childInput.getId();
         this.lastName = childInput.getLastName();
         this.firstName = childInput.getFirstName();
@@ -66,7 +65,7 @@ public class Child {
         this.receivedGifts = new ArrayList<>();
     }
 
-    public Child(Child child) {
+    public Child(final Child child) {
         this.id = child.getId();
         this.lastName = child.getLastName();
         this.firstName = child.getFirstName();
@@ -87,12 +86,12 @@ public class Child {
      * child's age
      * @param averageScoreStrategy the strategy which calculates the average score
      */
-    public void calculateAverageScore(AverageScoreStrategy averageScoreStrategy) {
+    public void calculateAverageScore(final AverageScoreStrategy averageScoreStrategy) {
         this.averageScore = averageScoreStrategy.getAverageScore(this);
     }
 
     /**
-     * increase the age of the child by one year
+     * Increase the age of the child by one year
      */
     public void getOlder() {
         this.age++;
@@ -103,7 +102,7 @@ public class Child {
      * @param newNiceScore the new to-be-added score
      * @param newPreferences the new to-be-added preferences
      */
-    public void updateChild(Double newNiceScore, List<String> newPreferences) {
+    public void updateChild(final Double newNiceScore, final List<String> newPreferences) {
         addNiceScore(newNiceScore);
         addPreferences(newPreferences);
     }
@@ -112,7 +111,7 @@ public class Child {
      * Add new score to the nice score list
      * @param newNiceScore the new nice score
      */
-    private void addNiceScore(Double newNiceScore) {
+    private void addNiceScore(final Double newNiceScore) {
         if (newNiceScore == null) {
             return;
         }
@@ -124,7 +123,7 @@ public class Child {
      * existing one
      * @param newPreferences the new list of preferences
      */
-    private void addPreferences(List<String> newPreferences) {
+    private void addPreferences(final List<String> newPreferences) {
         if (newPreferences == null) {
             return;
         }
@@ -165,7 +164,7 @@ public class Child {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<String> giftsPreferences) {
+    public void setGiftsPreferences(final List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
@@ -173,7 +172,7 @@ public class Child {
         return averageScore;
     }
 
-    public void setAverageScore(double averageScore) {
+    public void setAverageScore(final double averageScore) {
         this.averageScore = averageScore;
     }
 
@@ -181,7 +180,7 @@ public class Child {
         return niceScoreHistory;
     }
 
-    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
 
@@ -189,7 +188,7 @@ public class Child {
         return assignedBudget;
     }
 
-    public void setAssignedBudget(double assignedBudget) {
+    public void setAssignedBudget(final double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
 
@@ -197,18 +196,18 @@ public class Child {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(List<Gift> receivedGifts) {
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 
     @Override
     public String toString() {
-        return "ChildSantaData{" +
-                "giftsPreferences=" + giftsPreferences +
-                ", averageScore=" + averageScore +
-                ", niceScoreHistory=" + niceScoreHistory +
-                ", assignedBudget=" + assignedBudget +
-                ", receivedGifts=" + receivedGifts +
-                '}';
+        return "ChildSantaData{"
+                + "giftsPreferences=" + giftsPreferences
+                + ", averageScore=" + averageScore
+                + ", niceScoreHistory=" + niceScoreHistory
+                + ", assignedBudget=" + assignedBudget
+                + ", receivedGifts=" + receivedGifts
+                + '}';
     }
 }

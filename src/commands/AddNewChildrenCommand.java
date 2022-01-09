@@ -2,21 +2,27 @@ package commands;
 
 import database.ChildrenDatabase;
 import fileio.input.AnnualChangesInput;
-import fileio.input.SimulationDataInput;
 
+/**
+ * The class which contains the concrete command which adds new children
+ * to the list of children within the database
+ */
 public class AddNewChildrenCommand implements Command {
     /**
-     * instance of the object the command will be performed on
+     * Instance of the object the command will be performed on
      */
+    private final ChildrenDatabase childrenDatabase;
 
-    private ChildrenDatabase childrenDatabase;
-
-    public AddNewChildrenCommand(ChildrenDatabase childrenDatabase) {
+    public AddNewChildrenCommand(final ChildrenDatabase childrenDatabase) {
         this.childrenDatabase = childrenDatabase;
     }
 
+    /**
+     * Execute the command which adds children to the list within the database
+     * @param annualChangesInput the input annual changes
+     */
     @Override
-    public void execute(AnnualChangesInput annualChangesInput) {
+    public void execute(final AnnualChangesInput annualChangesInput) {
         childrenDatabase.addChildren(annualChangesInput.getNewChildren());
     }
 }

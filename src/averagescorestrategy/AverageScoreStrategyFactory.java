@@ -1,21 +1,26 @@
 package averagescorestrategy;
 
+import common.Constants;
 import entities.Child;
 
 /**
- * Implementation of the
+ * Implementation of the factory design pattern for creating the average score strategies,
+ * depending on the age group of the child
  */
-public class AverageScoreStrategyFactory {
+public final class AverageScoreStrategyFactory {
     /**
      * the factory instance of the strategy will be created using the
      * lazy singleton design pattern
      */
     private static AverageScoreStrategyFactory instance = null;
 
-    private AverageScoreStrategyFactory() {}
+    /**
+     * The private constructor, essential for the singleton pattern
+     */
+    private AverageScoreStrategyFactory() { }
 
     /**
-     * Create if not existing and return the instance of the factory
+     * Create if not already existing and return the instance of the factory
      * @return the factory instance
      */
     public static AverageScoreStrategyFactory getInstance() {
@@ -32,7 +37,7 @@ public class AverageScoreStrategyFactory {
      * @param upperLimit the upper limit of the interval
      * @return true if in the interval, false otherwise
      */
-    public static boolean isBetween(int number, int lowerLimit, int upperLimit) {
+    public static boolean isBetween(final int number, final int lowerLimit, final int upperLimit) {
         return lowerLimit <= number && number <= upperLimit;
     }
 
@@ -42,14 +47,14 @@ public class AverageScoreStrategyFactory {
      * @param child the to-be-tested child
      * @return the strategy suited for the child's age
      */
-    public AverageScoreStrategy createAverageScoreStrategy(Child child) {
-        if (isBetween(child.getAge(), 0, 4)) {
+    public AverageScoreStrategy createAverageScoreStrategy(final Child child) {
+        if (isBetween(child.getAge(), Constants.BABY_LOWER_VALUE, Constants.BABY_UPPER_VALUE)) {
             return new BabyAverageScoreStrategy();
         }
-        if (isBetween(child.getAge(), 5, 11)) {
+        if (isBetween(child.getAge(), Constants.CHILD_LOWER_VALUE, Constants.CHILD_UPPER_VALUE)) {
             return new KidAverageScoreStrategy();
         }
-        if (isBetween(child.getAge(), 12, 18)) {
+        if (isBetween(child.getAge(), Constants.TEEN_LOWER_VALUE, Constants.TEEN_UPPER_VALUE)) {
             return new TeenAverageScoreStrategy();
         }
         return null;

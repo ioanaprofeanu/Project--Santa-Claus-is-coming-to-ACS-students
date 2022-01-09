@@ -15,26 +15,20 @@ public final class Comparators {
     /**
      * Sort children by id in ascending order
      */
-    public static class SortChildrenByIdAsc implements Comparator<Child> {
+    public static final class SortChildrenByIdAsc implements Comparator<Child> {
         @Override
-        public int compare(Child o1, Child o2) {
-            if (o2.getId() < o1.getId()) {
-                return 1;
-            }
-            return -1;
+        public int compare(final Child o1, final Child o2) {
+            return Integer.compare(o1.getId(), o2.getId());
         }
     }
 
     /**
      * Sort gifts by price in ascending order
      */
-    public static class SortGiftsByPriceAsc implements Comparator<Gift> {
+    public static final class SortGiftsByPriceAsc implements Comparator<Gift> {
         @Override
-        public int compare(Gift o1, Gift o2) {
-            if (o2.getPrice() < o1.getPrice()) {
-                return 1;
-            }
-            return -1;
+        public int compare(final Gift o1, final Gift o2) {
+            return Double.compare(o1.getPrice(), o2.getPrice());
         }
     }
 }

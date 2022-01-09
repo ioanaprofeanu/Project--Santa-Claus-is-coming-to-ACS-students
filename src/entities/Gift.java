@@ -7,19 +7,19 @@ import fileio.input.GiftInput;
  */
 public final class Gift {
     /**
-     * the product's name
+     * The product's name
      */
     private String productName;
     /**
-     * the product's price
+     * The product's price
      */
     private double price;
     /**
-     * the product's category
+     * The product's category
      */
     private String category;
 
-    public Gift(GiftInput giftInput) {
+    public Gift(final GiftInput giftInput) {
         this.productName = giftInput.getProductName();
         this.price = giftInput.getPrice();
         this.category = giftInput.getCategory();
@@ -29,7 +29,7 @@ public final class Gift {
         return productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(final String productName) {
         this.productName = productName;
     }
 
@@ -37,7 +37,7 @@ public final class Gift {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(final double price) {
         this.price = price;
     }
 
@@ -45,16 +45,16 @@ public final class Gift {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(final String category) {
         this.category = category;
     }
 
     @Override
     public String toString() {
-        return "Gift{" +
-                "productName='" + productName + '\'' +
-                ", price=" + price +
-                ", category='" + category + '\'' +
-                '}';
+        return "Gift{"
+                + "productName='" + productName + '\''
+                + ", price=" + price
+                + ", category='" + category + '\''
+                + '}';
     }
 }
