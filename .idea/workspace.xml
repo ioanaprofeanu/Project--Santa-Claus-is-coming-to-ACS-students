@@ -6,24 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/averagescorestrategy/KidAverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/averagescorestrategy/KidAverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddNewChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AddNewChildrenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/AddNewGiftsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AddNewGiftsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/IncreaseChildrenAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/IncreaseChildrenAgeCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/RemoveYoungAdultsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/RemoveYoungAdultsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/commands/UpdateChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/UpdateChildrenCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/GiftsDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/GiftsDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/AnnualChangeInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/updatecommands/AnnualChangeInvoker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/ChildInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/ChildInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/ChildUpdatesInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/ChildUpdatesInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/input/GiftInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/input/GiftInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,9 +33,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/enums/Cities.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/Main.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/common/Constants.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/enums/Category.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/common/Constants.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/Main.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="21v2UmCFgudLtO2NUqgyGG5QiA1" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -108,6 +90,9 @@
       <workItem from="1641219448218" duration="45311000" />
       <workItem from="1641501981442" duration="14824000" />
       <workItem from="1641667390745" duration="21131000" />
+      <workItem from="1641852847489" duration="39000" />
+      <workItem from="1641853132833" duration="543000" />
+      <workItem from="1641853705023" duration="84000" />
     </task>
     <servers />
   </component>
