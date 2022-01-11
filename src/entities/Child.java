@@ -1,8 +1,11 @@
 package entities;
 
 import averagescorestrategy.AverageScoreStrategy;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import entities.Elves.Elf;
 import fileio.input.ChildInput;
 
+import java.nio.channels.AsynchronousChannelGroup;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,19 +53,30 @@ public final class Child {
      * List of received gifts
      */
     private List<Gift> receivedGifts;
+    /**
+     * The elf assigned to the child
+     */
+    @JsonIgnore
+    private Elf elf;
+    /**
+     * The child's nice score bonus
+     */
+    @JsonIgnore
+    private int niceScoreBonus;
 
-    public Child(final ChildInput childInput) {
-        this.id = childInput.getId();
-        this.lastName = childInput.getLastName();
-        this.firstName = childInput.getFirstName();
-        this.city = childInput.getCity();
-        this.age = childInput.getAge();
-        this.giftsPreferences = childInput.getGiftsPreferences();
-        this.averageScore = 0;
-        this.niceScoreHistory = new ArrayList<>();
-        this.niceScoreHistory.add(childInput.getNiceScore());
-        this.assignedBudget = 0;
-        this.receivedGifts = new ArrayList<>();
+    public Child(ChildBuilder childBuilder) {
+        this.id = childBuilder.id;
+        this.lastName = childBuilder.lastName;
+        this.firstName = childBuilder.firstName;
+        this.city = childBuilder.city;
+        this.age = childBuilder.age;
+        this.giftsPreferences = childBuilder.giftsPreferences;
+        this.averageScore = childBuilder.averageScore;
+        this.niceScoreHistory = childBuilder.niceScoreHistory;
+        this.assignedBudget = childBuilder.assignedBudget;
+        this.receivedGifts = childBuilder.receivedGifts;
+        this.elf = childBuilder.elf;
+        this.niceScoreBonus = childBuilder.niceScoreBonus;
     }
 
     public Child(final Child child) {
@@ -79,6 +93,43 @@ public final class Child {
         this.assignedBudget = child.getAssignedBudget();
         this.receivedGifts = new ArrayList<>();
         this.receivedGifts.addAll(child.getReceivedGifts());
+    }
+
+    static public class ChildBuilder {
+        private int id;
+        private String lastName;
+        private String firstName;
+        private String city;
+        private int age;
+        private List<String> giftsPreferences;
+        private double averageScore = 0;
+        private List<Double> niceScoreHistory = new ArrayList<>();
+        private double assignedBudget = 0;
+        private List<Gift> receivedGifts = new ArrayList<>();
+        private Elf elf;
+        private int niceScoreBonus = 0;
+
+        public ChildBuilder(int id, String lastName, String firstName,
+                            String city, int age, List<String> giftsPreferences,
+                            double niceScore, Elf elf) {
+            this.id = id;
+            this.lastName = lastName;
+            this.firstName = firstName;
+            this.city = city;
+            this.age = age;
+            this.giftsPreferences = giftsPreferences;
+            this.niceScoreHistory.add(niceScore);
+            this.elf = elf;
+        }
+
+        public ChildBuilder addNiceScoreBonus(int niceScoreBonus) {
+            this.niceScoreBonus = niceScoreBonus;
+            return this;
+        }
+
+        public Child buildChild() {
+            return new Child(this);
+        }
     }
 
     /**
@@ -164,50 +215,27 @@ public final class Child {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(final List<String> giftsPreferences) {
-        this.giftsPreferences = giftsPreferences;
-    }
-
     public double getAverageScore() {
         return averageScore;
-    }
-
-    public void setAverageScore(final double averageScore) {
-        this.averageScore = averageScore;
     }
 
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
     }
 
-    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
-        this.niceScoreHistory = niceScoreHistory;
-    }
-
     public double getAssignedBudget() {
         return assignedBudget;
-    }
-
-    public void setAssignedBudget(final double assignedBudget) {
-        this.assignedBudget = assignedBudget;
     }
 
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(final List<Gift> receivedGifts) {
-        this.receivedGifts = receivedGifts;
+    public Elf getElf() {
+        return elf;
     }
 
-    @Override
-    public String toString() {
-        return "ChildSantaData{"
-                + "giftsPreferences=" + giftsPreferences
-                + ", averageScore=" + averageScore
-                + ", niceScoreHistory=" + niceScoreHistory
-                + ", assignedBudget=" + assignedBudget
-                + ", receivedGifts=" + receivedGifts
-                + '}';
+    public int getNiceScoreBonus() {
+        return niceScoreBonus;
     }
 }

@@ -20,12 +20,16 @@ public final class ChildUpdatesInput {
      * The child's new list of gift preferences
      */
     private List<String> giftsPreferences;
+    /**
+     * The new elf assigned to the child
+     */
+    private String elf;
 
     public int getId() {
         return id;
     }
 
-    public void setId(final int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -33,7 +37,7 @@ public final class ChildUpdatesInput {
         return niceScore;
     }
 
-    public void setNiceScore(final Double niceScore) {
+    public void setNiceScore(Double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -41,16 +45,25 @@ public final class ChildUpdatesInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(final ArrayList<String> giftsPreferences) {
+    public void setGiftsPreferences(List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
+    }
+
+    public String getElf() {
+        return elf;
+    }
+
+    public void setElf(String elf) {
+        this.elf = elf;
     }
 
     @Override
     public String toString() {
-        return "ChildrenUpdatesInput{"
+        return "ChildUpdatesInput{"
                 + "id=" + id
                 + ", niceScore=" + niceScore
                 + ", giftsPreferences=" + giftsPreferences
+                + ", elf='" + elf + '\''
                 + '}';
     }
 }

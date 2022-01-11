@@ -35,12 +35,20 @@ public final class ChildInput {
      * the list of gift preferences
      */
     private List<String> giftsPreferences = new ArrayList<>();
+    /**
+     * the child's nice score bonus
+     */
+    private int niceScoreBonus;
+    /**
+     * the elf assigned to the child
+     */
+    private String elf;
 
     public int getId() {
         return id;
     }
 
-    public void setId(final int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -48,7 +56,7 @@ public final class ChildInput {
         return lastName;
     }
 
-    public void setLastName(final String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
@@ -56,7 +64,7 @@ public final class ChildInput {
         return firstName;
     }
 
-    public void setFirstName(final String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
@@ -64,7 +72,7 @@ public final class ChildInput {
         return age;
     }
 
-    public void setAge(final int age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -72,7 +80,7 @@ public final class ChildInput {
         return city;
     }
 
-    public void setCity(final String city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
@@ -80,7 +88,7 @@ public final class ChildInput {
         return niceScore;
     }
 
-    public void setNiceScore(final double niceScore) {
+    public void setNiceScore(double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -88,8 +96,24 @@ public final class ChildInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(final List<String> giftsPreferences) {
+    public void setGiftsPreferences(List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
+    }
+
+    public int getNiceScoreBonus() {
+        return niceScoreBonus;
+    }
+
+    public void setNiceScoreBonus(int niceScoreBonus) {
+        this.niceScoreBonus = niceScoreBonus;
+    }
+
+    public String getElf() {
+        return elf;
+    }
+
+    public void setElf(String elf) {
+        this.elf = elf;
     }
 
     @Override
@@ -102,6 +126,8 @@ public final class ChildInput {
                 + ", city='" + city + '\''
                 + ", niceScore=" + niceScore
                 + ", giftsPreferences=" + giftsPreferences
+                + ", niceScoreBonus=" + niceScoreBonus
+                + ", elf='" + elf + '\''
                 + '}';
     }
 }

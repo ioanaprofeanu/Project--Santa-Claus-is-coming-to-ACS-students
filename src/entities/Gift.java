@@ -1,5 +1,6 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import fileio.input.GiftInput;
 
 /**
@@ -18,43 +19,39 @@ public final class Gift {
      * The product's category
      */
     private String category;
+    /**
+     * The quantity of product
+     */
+    @JsonIgnore
+    private int quantity;
 
     public Gift(final GiftInput giftInput) {
         this.productName = giftInput.getProductName();
         this.price = giftInput.getPrice();
         this.category = giftInput.getCategory();
+        this.quantity = giftInput.getQuantity();
+    }
+
+    public void decreaseQuantity() {
+        if (quantity == 0) {
+            throw new IllegalCallerException("Gift " + productName + " out of stock!");
+        }
+        quantity--;
     }
 
     public String getProductName() {
         return productName;
     }
 
-    public void setProductName(final String productName) {
-        this.productName = productName;
-    }
-
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(final double price) {
-        this.price = price;
     }
 
     public String getCategory() {
         return category;
     }
 
-    public void setCategory(final String category) {
-        this.category = category;
-    }
-
-    @Override
-    public String toString() {
-        return "Gift{"
-                + "productName='" + productName + '\''
-                + ", price=" + price
-                + ", category='" + category + '\''
-                + '}';
+    public int getQuantity() {
+        return quantity;
     }
 }

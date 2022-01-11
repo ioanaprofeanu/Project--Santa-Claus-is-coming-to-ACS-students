@@ -16,12 +16,16 @@ public final class GiftInput {
      * The product's category
      */
     private String category;
+    /**
+     * The quantity of product
+     */
+    private int quantity;
 
     public String getProductName() {
         return productName;
     }
 
-    public void setProductName(final String productName) {
+    public void setProductName(String productName) {
         this.productName = productName;
     }
 
@@ -29,7 +33,7 @@ public final class GiftInput {
         return price;
     }
 
-    public void setPrice(final double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -37,8 +41,16 @@ public final class GiftInput {
         return category;
     }
 
-    public void setCategory(final String category) {
+    public void setCategory(String category) {
         this.category = category;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     @Override
@@ -47,6 +59,7 @@ public final class GiftInput {
                 + "productName='" + productName + '\''
                 + ", price=" + price
                 + ", category='" + category + '\''
+                + ", quantity='" + quantity + '\''
                 + '}';
     }
 }

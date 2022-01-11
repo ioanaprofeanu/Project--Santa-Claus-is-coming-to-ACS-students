@@ -23,12 +23,16 @@ public final class AnnualChangesInput {
      * List of updates to be made for certain children
      */
     private List<ChildUpdatesInput> childrenUpdates;
+    /**
+     * The gift assigment strategy
+     */
+    private String strategy;
 
     public double getNewSantaBudget() {
         return newSantaBudget;
     }
 
-    public void setNewSantaBudget(final double newSantaBudget) {
+    public void setNewSantaBudget(double newSantaBudget) {
         this.newSantaBudget = newSantaBudget;
     }
 
@@ -36,7 +40,7 @@ public final class AnnualChangesInput {
         return newGifts;
     }
 
-    public void setNewGifts(final List<GiftInput> newGifts) {
+    public void setNewGifts(List<GiftInput> newGifts) {
         this.newGifts = newGifts;
     }
 
@@ -44,7 +48,7 @@ public final class AnnualChangesInput {
         return newChildren;
     }
 
-    public void setNewChildren(final List<ChildInput> newChildren) {
+    public void setNewChildren(List<ChildInput> newChildren) {
         this.newChildren = newChildren;
     }
 
@@ -52,8 +56,16 @@ public final class AnnualChangesInput {
         return childrenUpdates;
     }
 
-    public void setChildrenUpdates(final List<ChildUpdatesInput> childrenUpdates) {
+    public void setChildrenUpdates(List<ChildUpdatesInput> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
+    }
+
+    public String getStrategy() {
+        return strategy;
+    }
+
+    public void setStrategy(String strategy) {
+        this.strategy = strategy;
     }
 
     @Override
@@ -63,6 +75,7 @@ public final class AnnualChangesInput {
                 + ", newGifts=" + newGifts
                 + ", newChildren=" + newChildren
                 + ", childrenUpdates=" + childrenUpdates
+                + ", strategy=" + strategy
                 + '}';
     }
 }
