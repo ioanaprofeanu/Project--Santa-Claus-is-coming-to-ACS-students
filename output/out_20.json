@@ -28,7 +28,7 @@
       "giftsPreferences" : [ "Board Games", "Technology", "Sweets", "Books" ],
       "averageScore" : 3.0,
       "niceScoreHistory" : [ 3.0 ],
-      "assignedBudget" : 223.0,
+      "assignedBudget" : 156.10000000000002,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -72,7 +72,7 @@
       "giftsPreferences" : [ "Board Games", "Sweets", "Technology", "Books" ],
       "averageScore" : 1.0,
       "niceScoreHistory" : [ 3.0, 0.0 ],
-      "assignedBudget" : 53.519999999999996,
+      "assignedBudget" : 37.464,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -81,10 +81,6 @@
         "productName" : "Gummy Bears",
         "price" : 10.0,
         "category" : "Sweets"
-      }, {
-        "productName" : "Diary of a Wimpy Kid",
-        "price" : 25.0,
-        "category" : "Books"
       } ]
     }, {
       "id" : 2,
@@ -95,7 +91,7 @@
       "giftsPreferences" : [ "Board Games", "Toys", "Sweets", "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 9.0 ],
-      "assignedBudget" : 535.1999999999999,
+      "assignedBudget" : 374.64,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -143,7 +139,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Board Games", "Technology" ],
       "averageScore" : 4.0,
       "niceScoreHistory" : [ 3.0, 0.0, 7.0 ],
-      "assignedBudget" : 184.55172413793105,
+      "assignedBudget" : 129.18620689655174,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -166,7 +162,7 @@
       "giftsPreferences" : [ "Board Games", "Toys", "Sweets", "Books" ],
       "averageScore" : 8.0,
       "niceScoreHistory" : [ 9.0, 7.0 ],
-      "assignedBudget" : 369.1034482758621,
+      "assignedBudget" : 258.3724137931035,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -218,7 +214,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Board Games", "Technology" ],
       "averageScore" : 6.4,
       "niceScoreHistory" : [ 3.0, 0.0, 7.0, 10.0 ],
-      "assignedBudget" : 115.61538461538463,
+      "assignedBudget" : 80.93076923076924,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -241,7 +237,7 @@
       "giftsPreferences" : [ "Board Games", "Toys", "Sweets", "Books" ],
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 9.0, 7.0, 2.0 ],
-      "assignedBudget" : 108.38942307692308,
+      "assignedBudget" : 75.87259615384616,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -268,7 +264,7 @@
       "giftsPreferences" : [ "Toys" ],
       "averageScore" : 8.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 144.51923076923077,
+      "assignedBudget" : 187.875,
       "receivedGifts" : [ {
         "productName" : "Bike",
         "price" : 25.0,

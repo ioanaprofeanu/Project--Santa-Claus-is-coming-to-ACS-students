@@ -1,11 +1,10 @@
 package entities;
 
-import averagescorestrategy.AverageScoreStrategy;
+import strategy.averagescore.AverageScoreStrategy;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import entities.Elves.Elf;
-import fileio.input.ChildInput;
+import entities.Elves.ElvesFactory;
 
-import java.nio.channels.AsynchronousChannelGroup;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -111,7 +110,7 @@ public final class Child {
 
         public ChildBuilder(int id, String lastName, String firstName,
                             String city, int age, List<String> giftsPreferences,
-                            double niceScore, Elf elf) {
+                            double niceScore, String elfColor) {
             this.id = id;
             this.lastName = lastName;
             this.firstName = firstName;
@@ -119,7 +118,7 @@ public final class Child {
             this.age = age;
             this.giftsPreferences = giftsPreferences;
             this.niceScoreHistory.add(niceScore);
-            this.elf = elf;
+            this.elf = ElvesFactory.getInstance().createElf(elfColor);
         }
 
         public ChildBuilder addNiceScoreBonus(int niceScoreBonus) {
@@ -211,31 +210,63 @@ public final class Child {
         return age;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
+    }
+
+    public void setGiftsPreferences(List<String> giftsPreferences) {
+        this.giftsPreferences = giftsPreferences;
     }
 
     public double getAverageScore() {
         return averageScore;
     }
 
+    public void setAverageScore(double averageScore) {
+        this.averageScore = averageScore;
+    }
+
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
+    }
+
+    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+        this.niceScoreHistory = niceScoreHistory;
     }
 
     public double getAssignedBudget() {
         return assignedBudget;
     }
 
+    public void setAssignedBudget(double assignedBudget) {
+        this.assignedBudget = assignedBudget;
+    }
+
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
+    }
+
+    public void setReceivedGifts(List<Gift> receivedGifts) {
+        this.receivedGifts = receivedGifts;
     }
 
     public Elf getElf() {
         return elf;
     }
 
+    public void setElf(Elf elf) {
+        this.elf = elf;
+    }
+
     public int getNiceScoreBonus() {
         return niceScoreBonus;
+    }
+
+    public void setNiceScoreBonus(int niceScoreBonus) {
+        this.niceScoreBonus = niceScoreBonus;
     }
 }

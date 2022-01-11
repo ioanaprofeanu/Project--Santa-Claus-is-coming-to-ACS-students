@@ -1,4 +1,4 @@
-package updatecommands;
+package command;
 
 import fileio.input.AnnualChangesInput;
 

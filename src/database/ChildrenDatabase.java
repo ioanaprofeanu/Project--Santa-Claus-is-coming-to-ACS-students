@@ -37,7 +37,19 @@ public final class ChildrenDatabase {
         }
         for (ChildInput childInput : childrenInput) {
             if (childInput.getAge() <= Constants.TEEN_UPPER_VALUE) {
-                Child child = new Child(childInput);
+                Child child;
+                if (childInput.getNiceScoreBonus() == 0) {
+                    child = new Child.ChildBuilder(childInput.getId(), childInput.getLastName(),
+                            childInput.getFirstName(), childInput.getCity(), childInput.getAge(),
+                            childInput.getGiftsPreferences(), childInput.getNiceScore(),
+                            childInput.getElf()).buildChild();
+                } else {
+                    child = new Child.ChildBuilder(childInput.getId(), childInput.getLastName(),
+                            childInput.getFirstName(), childInput.getCity(), childInput.getAge(),
+                            childInput.getGiftsPreferences(), childInput.getNiceScore(),
+                            childInput.getElf()).addNiceScoreBonus(childInput.getNiceScoreBonus())
+                            .buildChild();
+                    }
                 children.add(child);
             }
         }

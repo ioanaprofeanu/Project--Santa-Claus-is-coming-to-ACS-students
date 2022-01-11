@@ -1,4 +1,4 @@
-package averagescorestrategy;
+package strategy.averagescore;
 
 import entities.Child;
 

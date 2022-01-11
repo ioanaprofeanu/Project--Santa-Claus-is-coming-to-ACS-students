@@ -9,7 +9,7 @@
       "giftsPreferences" : [ "Toys", "Board Games", "Sweets" ],
       "averageScore" : 8.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 135.48387096774192,
+      "assignedBudget" : 94.83870967741935,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -32,7 +32,7 @@
       "giftsPreferences" : [ "Books", "Clothes" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 5.0 ],
-      "assignedBudget" : 169.3548387096774,
+      "assignedBudget" : 118.54838709677418,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -62,7 +62,7 @@
       "giftsPreferences" : [ "Books", "Clothes" ],
       "averageScore" : 3.0,
       "niceScoreHistory" : [ 3.0 ],
-      "assignedBudget" : 50.80645161290322,
+      "assignedBudget" : 35.564516129032256,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -79,15 +79,11 @@
       "giftsPreferences" : [ "Clothes", "Sweets", "Technology", "Toys", "Board Games" ],
       "averageScore" : 8.666666666666666,
       "niceScoreHistory" : [ 8.0, 9.0 ],
-      "assignedBudget" : 148.72538860103626,
+      "assignedBudget" : 104.10777202072538,
       "receivedGifts" : [ {
         "productName" : "Bag of Candy",
         "price" : 20.0,
         "category" : "Sweets"
-      }, {
-        "productName" : "Headphones",
-        "price" : 100.0,
-        "category" : "Technology"
       }, {
         "productName" : "Doll",
         "price" : 10.0,
@@ -106,7 +102,7 @@
       "giftsPreferences" : [ "Books", "Clothes" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 5.0, 7.0 ],
-      "assignedBudget" : 171.60621761658032,
+      "assignedBudget" : 120.12435233160622,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -136,7 +132,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Books", "Clothes" ],
       "averageScore" : 3.5,
       "niceScoreHistory" : [ 3.0, 4.0 ],
-      "assignedBudget" : 60.06217616580311,
+      "assignedBudget" : 42.04352331606218,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -145,10 +141,6 @@
         "productName" : "Bag of Candy",
         "price" : 20.0,
         "category" : "Sweets"
-      }, {
-        "productName" : "Twilight",
-        "price" : 30.0,
-        "category" : "Books"
       } ]
     } ]
   }, {
@@ -161,7 +153,7 @@
       "giftsPreferences" : [ "Board Games", "Sweets", "Technology", "Clothes", "Toys" ],
       "averageScore" : 8.666666666666666,
       "niceScoreHistory" : [ 8.0, 9.0 ],
-      "assignedBudget" : 107.05882352941177,
+      "assignedBudget" : 74.94117647058823,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,
@@ -184,7 +176,7 @@
       "giftsPreferences" : [ "Books", "Clothes" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 5.0, 7.0, 4.0 ],
-      "assignedBudget" : 123.52941176470588,
+      "assignedBudget" : 86.47058823529412,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -214,7 +206,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Books", "Clothes" ],
       "averageScore" : 4.333333333333333,
       "niceScoreHistory" : [ 3.0, 4.0, 6.0 ],
-      "assignedBudget" : 53.529411764705884,
+      "assignedBudget" : 37.470588235294116,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -244,7 +236,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Technology", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 123.52941176470588,
+      "assignedBudget" : 160.58823529411765,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -253,6 +245,10 @@
         "productName" : "Twilight",
         "price" : 30.0,
         "category" : "Books"
+      }, {
+        "productName" : "Headphones",
+        "price" : 100.0,
+        "category" : "Technology"
       }, {
         "productName" : "Bag of Candy",
         "price" : 20.0,
@@ -269,7 +265,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Board Games", "Sweets", "Technology", "Clothes" ],
       "averageScore" : 7.333333333333333,
       "niceScoreHistory" : [ 8.0, 9.0, 6.0 ],
-      "assignedBudget" : 93.71196754563896,
+      "assignedBudget" : 65.59837728194726,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -282,10 +278,6 @@
         "productName" : "Uno",
         "price" : 10.0,
         "category" : "Board Games"
-      }, {
-        "productName" : "Bag of Candy",
-        "price" : 20.0,
-        "category" : "Sweets"
       } ]
     }, {
       "id" : 1,
@@ -296,15 +288,15 @@
       "giftsPreferences" : [ "Toys", "Clothes", "Technology", "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 5.0, 7.0, 4.0 ],
-      "assignedBudget" : 127.78904665314403,
+      "assignedBudget" : 89.45233265720083,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
         "category" : "Toys"
       }, {
-        "productName" : "Headphones",
-        "price" : 100.0,
-        "category" : "Technology"
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
       } ]
     }, {
       "id" : 3,
@@ -330,7 +322,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Books", "Clothes" ],
       "averageScore" : 4.25,
       "niceScoreHistory" : [ 3.0, 4.0, 6.0, 4.0 ],
-      "assignedBudget" : 54.31034482758621,
+      "assignedBudget" : 38.01724137931035,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -368,7 +360,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Technology", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 127.78904665314403,
+      "assignedBudget" : 166.12576064908723,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -377,6 +369,10 @@
         "productName" : "Twilight",
         "price" : 30.0,
         "category" : "Books"
+      }, {
+        "productName" : "Headphones",
+        "price" : 100.0,
+        "category" : "Technology"
       }, {
         "productName" : "Bag of Candy",
         "price" : 20.0,
@@ -393,7 +389,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Board Games", "Sweets", "Technology", "Clothes" ],
       "averageScore" : 6.8,
       "niceScoreHistory" : [ 8.0, 9.0, 6.0, 6.0 ],
-      "assignedBudget" : 99.27758007117437,
+      "assignedBudget" : 69.49430604982206,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -406,10 +402,6 @@
         "productName" : "Uno",
         "price" : 10.0,
         "category" : "Board Games"
-      }, {
-        "productName" : "Bag of Candy",
-        "price" : 20.0,
-        "category" : "Sweets"
       } ]
     }, {
       "id" : 1,
@@ -420,7 +412,7 @@
       "giftsPreferences" : [ "Books", "Board Games", "Toys", "Clothes", "Technology" ],
       "averageScore" : 5.333333333333333,
       "niceScoreHistory" : [ 5.0, 7.0, 4.0 ],
-      "assignedBudget" : 77.86476868327401,
+      "assignedBudget" : 54.50533807829181,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -462,15 +454,15 @@
       "giftsPreferences" : [ "Clothes", "Toys", "Sweets", "Books" ],
       "averageScore" : 4.0,
       "niceScoreHistory" : [ 3.0, 4.0, 6.0, 4.0, 3.0 ],
-      "assignedBudget" : 58.39857651245551,
+      "assignedBudget" : 40.879003558718864,
       "receivedGifts" : [ {
-        "productName" : "Dress",
-        "price" : 45.0,
-        "category" : "Clothes"
-      }, {
         "productName" : "Doll",
         "price" : 10.0,
         "category" : "Toys"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
       } ]
     }, {
       "id" : 5,
@@ -504,7 +496,7 @@
       "giftsPreferences" : [ "Books", "Toys", "Clothes", "Board Games", "Technology", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 145.99644128113877,
+      "assignedBudget" : 189.7953736654804,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -537,7 +529,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Board Games", "Sweets", "Technology", "Clothes" ],
       "averageScore" : 6.533333333333333,
       "niceScoreHistory" : [ 8.0, 9.0, 6.0, 6.0, 6.0 ],
-      "assignedBudget" : 112.79325627878681,
+      "assignedBudget" : 78.95527939515077,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -564,7 +556,7 @@
       "giftsPreferences" : [ "Books", "Toys", "Technology", "Board Games", "Clothes" ],
       "averageScore" : 5.333333333333333,
       "niceScoreHistory" : [ 5.0, 7.0, 4.0 ],
-      "assignedBudget" : 92.07612757451984,
+      "assignedBudget" : 64.4532893021639,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -606,7 +598,7 @@
       "giftsPreferences" : [ "Books", "Board Games", "Clothes", "Toys", "Sweets" ],
       "averageScore" : 5.428571428571429,
       "niceScoreHistory" : [ 3.0, 4.0, 6.0, 4.0, 3.0, 9.0 ],
-      "assignedBudget" : 93.72034413835057,
+      "assignedBudget" : 65.6042408968454,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -616,9 +608,9 @@
         "price" : 10.0,
         "category" : "Board Games"
       }, {
-        "productName" : "Dress",
-        "price" : 45.0,
-        "category" : "Clothes"
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
       } ]
     }, {
       "id" : 5,
@@ -652,7 +644,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Clothes", "Board Games", "Technology", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 172.64273920222473,
+      "assignedBudget" : 224.43556096289214,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -669,6 +661,10 @@
         "productName" : "Uno",
         "price" : 10.0,
         "category" : "Board Games"
+      }, {
+        "productName" : "Headphones",
+        "price" : 100.0,
+        "category" : "Technology"
       }, {
         "productName" : "Bag of Candy",
         "price" : 20.0,

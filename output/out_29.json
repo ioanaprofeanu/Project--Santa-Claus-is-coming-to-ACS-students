@@ -9,7 +9,7 @@
       "giftsPreferences" : [ "Sweets", "Toys", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0 ],
-      "assignedBudget" : 170.83333333333331,
+      "assignedBudget" : 119.58333333333331,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -82,7 +82,7 @@
       "giftsPreferences" : [ "Sweets", "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 170.83333333333331,
+      "assignedBudget" : 222.08333333333331,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -103,7 +103,7 @@
       "giftsPreferences" : [ "Sweets", "Toys", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
-      "assignedBudget" : 215.78947368421052,
+      "assignedBudget" : 151.05263157894737,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -176,7 +176,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 215.78947368421052,
+      "assignedBudget" : 280.52631578947364,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -201,7 +201,7 @@
       "giftsPreferences" : [ "Books", "Toys", "Sweets", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0, 8.0, 8.0 ],
-      "assignedBudget" : 192.58064516129036,
+      "assignedBudget" : 134.80645161290326,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -255,7 +255,7 @@
       "giftsPreferences" : [ "Books", "Technology", "Board Games", "Toys", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 8.0, 5.0 ],
-      "assignedBudget" : 192.58064516129036,
+      "assignedBudget" : 250.35483870967747,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -286,7 +286,7 @@
       "giftsPreferences" : [ "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 192.58064516129036,
+      "assignedBudget" : 250.35483870967747,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,
@@ -326,7 +326,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Toys", "Board Games" ],
       "averageScore" : 6.666666666666667,
       "niceScoreHistory" : [ 4.0, 8.0, 8.0 ],
-      "assignedBudget" : 205.8252427184466,
+      "assignedBudget" : 144.07766990291262,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -380,7 +380,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Technology", "Board Games", "Toys" ],
       "averageScore" : 7.666666666666667,
       "niceScoreHistory" : [ 8.0, 5.0, 10.0 ],
-      "assignedBudget" : 236.69902912621356,
+      "assignedBudget" : 307.70873786407765,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -411,7 +411,7 @@
       "giftsPreferences" : [ "Books" ],
       "averageScore" : 6.666666666666667,
       "niceScoreHistory" : [ 10.0, 5.0 ],
-      "assignedBudget" : 205.8252427184466,
+      "assignedBudget" : 267.5728155339806,
       "receivedGifts" : [ {
         "productName" : "Twilight",
         "price" : 30.0,

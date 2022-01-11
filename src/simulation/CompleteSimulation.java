@@ -1,12 +1,12 @@
 package simulation;
 
-import updatecommands.AddNewChildrenCommand;
-import updatecommands.IncreaseChildrenAgeCommand;
-import updatecommands.RemoveYoungAdultsCommand;
-import updatecommands.UpdateChildrenCommand;
-import updatecommands.AddNewGiftsCommand;
+import command.AddNewChildrenCommand;
+import command.IncreaseChildrenAgeCommand;
+import command.RemoveYoungAdultsCommand;
+import command.UpdateChildrenCommand;
+import command.AddNewGiftsCommand;
 import database.SantaDatabase;
-import updatecommands.AnnualChangeInvoker;
+import command.AnnualChangeInvoker;
 import fileio.input.AnnualChangesInput;
 import fileio.input.SimulationDataInput;
 import fileio.output.AllYearsChildrenOutput;

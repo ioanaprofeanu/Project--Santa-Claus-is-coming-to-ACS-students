@@ -82,7 +82,7 @@
       "giftsPreferences" : [ "Technology" ],
       "averageScore" : 8.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 540.6153846153846,
+      "assignedBudget" : 702.8000000000001,
       "receivedGifts" : [ {
         "productName" : "Laptop",
         "price" : 500.0,
@@ -168,7 +168,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Clothes", "Technology" ],
       "averageScore" : 8.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 338.69879518072287,
+      "assignedBudget" : 440.30843373493974,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
@@ -288,7 +288,7 @@
       "giftsPreferences" : [ "Clothes", "Sweets", "Books", "Technology" ],
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 8.0, 5.0 ],
-      "assignedBudget" : 74.66666666666667,
+      "assignedBudget" : 97.06666666666668,
       "receivedGifts" : [ {
         "productName" : "Dress",
         "price" : 45.0,
@@ -297,6 +297,10 @@
         "productName" : "Gummy Bears",
         "price" : 10.0,
         "category" : "Sweets"
+      }, {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
       } ]
     }, {
       "id" : 4,
@@ -436,7 +440,7 @@
       "giftsPreferences" : [ "Clothes", "Toys", "Sweets", "Books", "Technology" ],
       "averageScore" : 3.0,
       "niceScoreHistory" : [ 8.0, 5.0, 0.0 ],
-      "assignedBudget" : 147.78504672897196,
+      "assignedBudget" : 192.12056074766355,
       "receivedGifts" : [ {
         "productName" : "Dress",
         "price" : 45.0,
@@ -591,11 +595,15 @@
       "giftsPreferences" : [ "Technology", "Sweets", "Clothes", "Toys", "Books" ],
       "averageScore" : 3.0,
       "niceScoreHistory" : [ 8.0, 5.0, 0.0 ],
-      "assignedBudget" : 50.76610169491525,
+      "assignedBudget" : 65.99593220338983,
       "receivedGifts" : [ {
         "productName" : "Gummy Bears",
         "price" : 10.0,
         "category" : "Sweets"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
       }, {
         "productName" : "Doll",
         "price" : 10.0,
@@ -675,7 +683,7 @@
       "giftsPreferences" : [ "Toys" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 3.0 ],
-      "assignedBudget" : 169.22033898305085,
+      "assignedBudget" : 118.4542372881356,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -765,7 +773,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Technology", "Clothes", "Books" ],
       "averageScore" : 2.6,
       "niceScoreHistory" : [ 8.0, 5.0, 0.0, 2.0 ],
-      "assignedBudget" : 55.61639824304539,
+      "assignedBudget" : 72.301317715959,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -775,9 +783,9 @@
         "price" : 10.0,
         "category" : "Sweets"
       }, {
-        "productName" : "Harry Potter",
-        "price" : 35.0,
-        "category" : "Books"
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
       } ]
     }, {
       "id" : 4,
@@ -857,7 +865,7 @@
       "giftsPreferences" : [ "Toys" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 3.0, 1.0 ],
-      "assignedBudget" : 213.90922401171304,
+      "assignedBudget" : 149.73645680819914,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,

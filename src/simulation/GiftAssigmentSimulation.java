@@ -1,6 +1,6 @@
 package simulation;
 
-import averagescorestrategy.AverageScoreStrategyFactory;
+import strategy.averagescore.AverageScoreStrategyFactory;
 import database.SantaDatabase;
 import entities.Child;
 import entities.Gift;
@@ -71,7 +71,9 @@ public abstract class GiftAssigmentSimulation implements Simulation {
             return;
         }
         for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
-            child.setAssignedBudget(child.getAverageScore() * this.budgetUnit);
+            double newBudget = child.getAverageScore() * this.budgetUnit;
+            newBudget += child.getElf().budgetChange(newBudget);
+            child.setAssignedBudget(newBudget);
         }
     }
 
