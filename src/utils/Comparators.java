@@ -52,7 +52,13 @@ public final class Comparators {
     public static final class SortCitiesByNiceScoreDesc implements Comparator<City> {
         @Override
         public int compare(City o1, City o2) {
-            return Double.compare(o2.getNiceScoreCity(), o1.getNiceScoreCity());
+            if (o1.getNiceScoreCity() == o2.getNiceScoreCity()) {
+                return o1.getName().compareTo(o2.getName());
+            }
+            if (o1.getNiceScoreCity() < o2.getNiceScoreCity()) {
+                return 1;
+            }
+            return -1;
         }
     }
 }
