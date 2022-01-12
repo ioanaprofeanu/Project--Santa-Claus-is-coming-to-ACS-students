@@ -4,6 +4,7 @@ import strategy.averagescore.AverageScoreStrategyFactory;
 import database.SantaDatabase;
 import entities.Child;
 import entities.Gift;
+import strategy.giftassigment.GiftsAssigmentStrategyFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,11 +27,12 @@ public abstract class GiftAssigmentSimulation implements Simulation {
      * Function which executes all operations in order to assign gifts
      * @param santaDatabase the main database
      */
-    public void makeSimulation(final SantaDatabase santaDatabase) {
+    public void makeSimulation(final SantaDatabase santaDatabase,
+                               final String strategyType) {
         calculateAverageScores(santaDatabase);
         setBudgetUnit(santaDatabase);
         setChildrenBudget(santaDatabase);
-        assignGifts(santaDatabase);
+        assignGifts(santaDatabase, strategyType);
     }
 
     /**
@@ -81,11 +83,14 @@ public abstract class GiftAssigmentSimulation implements Simulation {
      * Assign gifts for each child
      * @param santaDatabase the main database
      */
-    private void assignGifts(final SantaDatabase santaDatabase) {
+    private void assignGifts(final SantaDatabase santaDatabase,
+                             final String strategyType) {
         if (santaDatabase == null) {
             return;
         }
-        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
+        List<Child> childrenList = Objects.requireNonNull(GiftsAssigmentStrategyFactory.getInstance().
+                createGiftsAssigmentStrategy(strategyType)).getOrderedChildren(santaDatabase);
+        for (Child child : childrenList) {
             double childAssignedBudget = child.getAssignedBudget();
             List<Gift> newReceivedGifts = new ArrayList<>();
             for (String giftPreferences : child.getGiftsPreferences()) {

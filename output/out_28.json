@@ -417,10 +417,6 @@
         "productName" : "Lego",
         "price" : 30.0,
         "category" : "Toys"
-      }, {
-        "productName" : "Dress",
-        "price" : 45.0,
-        "category" : "Clothes"
       } ]
     }, {
       "id" : 3,
@@ -436,10 +432,6 @@
         "productName" : "Lego",
         "price" : 30.0,
         "category" : "Toys"
-      }, {
-        "productName" : "Dress",
-        "price" : 45.0,
-        "category" : "Clothes"
       } ]
     }, {
       "id" : 4,
@@ -470,6 +462,10 @@
         "productName" : "Lego",
         "price" : 30.0,
         "category" : "Toys"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
       } ]
     }, {
       "id" : 6,
@@ -485,6 +481,10 @@
         "productName" : "Lego",
         "price" : 30.0,
         "category" : "Toys"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
       }, {
         "productName" : "Uno",
         "price" : 10.0,

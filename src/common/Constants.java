@@ -33,6 +33,11 @@ public final class Constants {
     public static final String PINK = "pink";
     public static final String YELLOW = "yellow";
 
+    // gift assigment strategies
+    public static final String ID = "id";
+    public static final String NICE_SCORE = "niceScore";
+    public static final String NICE_SCORE_CITY = "niceScoreCity";
+
     private Constants() {
         //constructor for checkstyle
     }

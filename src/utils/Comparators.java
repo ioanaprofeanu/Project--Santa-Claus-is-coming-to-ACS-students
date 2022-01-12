@@ -22,6 +22,19 @@ public final class Comparators {
         }
     }
 
+    public static final class SortChildrenByNiceScoreDesc implements Comparator<Child> {
+        @Override
+        public int compare(Child o1, Child o2) {
+            if (o1.getAverageScore() == o2.getAverageScore()) {
+                Integer.compare(o1.getId(), o2.getId());
+            }
+            if (o1.getAverageScore() < o2.getAverageScore()) {
+                return 1;
+            }
+            return -1;
+        }
+    }
+
     /**
      * Sort gifts by price in ascending order
      */

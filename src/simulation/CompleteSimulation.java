@@ -5,6 +5,7 @@ import command.IncreaseChildrenAgeCommand;
 import command.RemoveYoungAdultsCommand;
 import command.UpdateChildrenCommand;
 import command.AddNewGiftsCommand;
+import common.Constants;
 import database.SantaDatabase;
 import command.AnnualChangeInvoker;
 import fileio.input.AnnualChangesInput;
@@ -70,7 +71,7 @@ public class CompleteSimulation implements Simulation {
         public void makeSimulation(final SimulationDataInput simulationDataInput,
                                    final AllYearsChildrenOutput allYearsChildrenOutput) {
             // assign the gifts
-            super.makeSimulation(santaDatabase);
+            super.makeSimulation(santaDatabase, Constants.ID);
             // add the children list to the output list of children from all years
             AnnualChildrenOutput initialChildrenOutput =
                     new AnnualChildrenOutput(santaDatabase.getChildrenDatabase().getChildren());
@@ -139,7 +140,7 @@ public class CompleteSimulation implements Simulation {
             annualChangeInvoker.makeChange(annualChangesInput);
 
             // assign the gifts
-            super.makeSimulation(santaDatabase);
+            super.makeSimulation(santaDatabase, annualChangesInput.getStrategy());
 
             // add the children list to the output list of children from all years
             AnnualChildrenOutput yearlyChildrenOutput =
