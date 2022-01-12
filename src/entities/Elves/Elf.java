@@ -28,4 +28,8 @@ public abstract class Elf {
      */
     public void giveBonusGift(Child child, GiftsDatabase giftsDatabase) {
     }
+
+    public String getColor() {
+        return color;
+    }
 }

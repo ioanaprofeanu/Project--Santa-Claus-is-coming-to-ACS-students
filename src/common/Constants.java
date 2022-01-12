@@ -21,7 +21,7 @@ public final class Constants {
     public static final Integer CHILD_UPPER_VALUE = 11;
     public static final Integer TEEN_LOWER_VALUE = 12;
     public static final Integer TEEN_UPPER_VALUE = 18;
-    public static final Integer BABY_AVERAGE_SCORE = 10;
+    public static final Integer MAXIMUM_AVERAGE_SCORE = 10;
 
     // values used for expressing the percentages of the changes made by the elves
     public static final Integer THIRTY = 30;

@@ -152,9 +152,11 @@ public final class Child {
      * @param newNiceScore the new to-be-added score
      * @param newPreferences the new to-be-added preferences
      */
-    public void updateChild(final Double newNiceScore, final List<String> newPreferences) {
+    public void updateChild(final Double newNiceScore, final List<String> newPreferences,
+                            final String elfColor) {
         addNiceScore(newNiceScore);
         addPreferences(newPreferences);
+        updateElf(elfColor);
     }
 
     /**
@@ -188,6 +190,14 @@ public final class Child {
         }
         // the actual list will be equal to the newly created one
         this.giftsPreferences = auxListPreferences;
+    }
+
+    /**
+     * Update the child's elf
+     * @param elfColor the elf's color
+     */
+    private void updateElf(final String elfColor) {
+        this.elf = ElvesFactory.getInstance().createElf(elfColor);
     }
 
     public int getId() {

@@ -14,6 +14,6 @@ public class BabyAverageScoreStrategy implements AverageScoreStrategy {
      */
     @Override
     public double getAverageScore(final Child child) {
-        return Constants.BABY_AVERAGE_SCORE;
+        return Constants.MAXIMUM_AVERAGE_SCORE;
     }
 }

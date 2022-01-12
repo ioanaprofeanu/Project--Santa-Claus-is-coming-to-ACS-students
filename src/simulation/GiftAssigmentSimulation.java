@@ -91,21 +91,24 @@ public abstract class GiftAssigmentSimulation implements Simulation {
             for (String giftPreferences : child.getGiftsPreferences()) {
                 // if the current gift preference exists in santa's gifts hashmap
                 if (santaDatabase.getGiftsDatabase().getGifts().containsKey(giftPreferences)) {
-                    // the list of gifts is ordered in ascending order by price
-                    // so the child may receive the first gift within the gifts list
-                    Gift currentGift = santaDatabase.getGiftsDatabase()
-                            .getGifts().get(giftPreferences).get(0);
-                    // if the price of the gift is not higher than the remaining budget
-                    if (currentGift.getPrice() <= childAssignedBudget) {
-                        // add the gift in the child's received gifts list
-                        newReceivedGifts.add(currentGift);
-                        // from the child's assigned budget, subtract the price of the given gift
-                        childAssignedBudget -= currentGift.getPrice();
+                    // iterate through the list of gifts ordered in ascending order by price
+                    for (Gift currentGift : santaDatabase.getGiftsDatabase().getGifts().get(giftPreferences)) {
+                        // if the gift still exists and is within the child's budget
+                        if (currentGift.getQuantity() > 0 && currentGift.getPrice() <= childAssignedBudget) {
+                            // add the gift in the child's received gifts list
+                            newReceivedGifts.add(currentGift);
+                            // from the child's assigned budget, subtract the price of the given gift
+                            childAssignedBudget -= currentGift.getPrice();
+                            // decrease the quantity of the gift
+                            currentGift.decreaseQuantity();
+                            break;
+                        }
                     }
                 }
             }
             // set the child's list of received gifts
             child.setReceivedGifts(newReceivedGifts);
+            child.getElf().giveBonusGift(child, santaDatabase.getGiftsDatabase());
         }
     }
 }

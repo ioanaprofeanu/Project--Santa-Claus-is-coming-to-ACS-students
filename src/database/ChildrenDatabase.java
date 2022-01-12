@@ -99,7 +99,8 @@ public final class ChildrenDatabase {
             if (getChildById(childUpdatesInput.getId()) != null) {
                 Objects.requireNonNull(getChildById(childUpdatesInput.getId())).
                         updateChild(childUpdatesInput.getNiceScore(),
-                                childUpdatesInput.getGiftsPreferences());
+                                childUpdatesInput.getGiftsPreferences(),
+                                childUpdatesInput.getElf());
             }
         }
     }
