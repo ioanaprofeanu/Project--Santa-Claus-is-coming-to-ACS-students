@@ -5,17 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/strategy/giftassigment/GiftsAssigmentStrategyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/giftassigment/IdGiftsAssigmentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/giftassigment/NiceScoreCityGiftAssigmentStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategy/giftassigment/NiceScoreGiftsAssigmentStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/database/CitiesDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/AddNewChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddNewChildrenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/AddNewGiftsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AddNewGiftsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/AnnualChangeInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/AnnualChangeInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/IncreaseChildrenAgeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/IncreaseChildrenAgeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/RemoveYoungAdultsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/RemoveYoungAdultsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/UpdateChildrenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/UpdateChildrenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/ChildrenDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ChildrenDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/SantaDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/SantaDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/entities/City.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/City.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/CompleteSimulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/GiftAssigmentSimulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategy/giftassigment/GiftsAssigmentStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategy/giftassigment/GiftsAssigmentStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Comparators.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Comparators.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,7 @@
       <workItem from="1641854526786" duration="9000" />
       <workItem from="1641854827931" duration="134000" />
       <workItem from="1641854989429" duration="12432000" />
-      <workItem from="1641946082700" duration="1946000" />
+      <workItem from="1641946082700" duration="4415000" />
     </task>
     <servers />
   </component>

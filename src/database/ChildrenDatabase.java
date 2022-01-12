@@ -21,9 +21,10 @@ public final class ChildrenDatabase {
      */
     private List<Child> children;
 
-    public ChildrenDatabase(final SimulationDataInput simulationDataInput) {
+    public ChildrenDatabase(final SimulationDataInput simulationDataInput,
+                            CitiesDatabase citiesDatabase) {
         this.children = new ArrayList<>();
-        addChildren(simulationDataInput.getInitialData().getChildren());
+        addChildren(simulationDataInput.getInitialData().getChildren(), citiesDatabase);
     }
 
     /**
@@ -31,7 +32,8 @@ public final class ChildrenDatabase {
      * used both for the initial simulation and the year simulation
      * @param childrenInput the input list of children
      */
-    public void addChildren(final List<ChildInput> childrenInput) {
+    public void addChildren(final List<ChildInput> childrenInput,
+                            CitiesDatabase citiesDatabase) {
         if (childrenInput == null) {
             return;
         }
@@ -49,8 +51,9 @@ public final class ChildrenDatabase {
                             childInput.getGiftsPreferences(), childInput.getNiceScore(),
                             childInput.getElf()).addNiceScoreBonus(childInput.getNiceScoreBonus())
                             .buildChild();
-                    }
+                }
                 children.add(child);
+                citiesDatabase.addToCitiesList(child);
             }
         }
         // sort the list in ascending order by id

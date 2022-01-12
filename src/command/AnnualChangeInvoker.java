@@ -1,5 +1,6 @@
 package command;
 
+import database.SantaDatabase;
 import fileio.input.AnnualChangesInput;
 
 /**
@@ -20,7 +21,7 @@ public class AnnualChangeInvoker {
      * Set off the command
      * @param annualChangesInput the input annual changes
      */
-    public void makeChange(final AnnualChangesInput annualChangesInput) {
-        annualChangeCommand.execute(annualChangesInput);
+    public void makeChange(final AnnualChangesInput annualChangesInput, SantaDatabase santaDatabase) {
+        annualChangeCommand.execute(annualChangesInput, santaDatabase);
     }
 }

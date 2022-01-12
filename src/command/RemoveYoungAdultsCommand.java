@@ -1,6 +1,7 @@
 package command;
 
 import database.ChildrenDatabase;
+import database.SantaDatabase;
 import fileio.input.AnnualChangesInput;
 
 /**
@@ -22,7 +23,8 @@ public class RemoveYoungAdultsCommand implements Command {
      * @param annualChangesInput the input annual changes
      */
     @Override
-    public void execute(final AnnualChangesInput annualChangesInput) {
+    public void execute(final AnnualChangesInput annualChangesInput,
+                        SantaDatabase santaDatabase) {
         childrenDatabase.removeYoungAdults();
     }
 }

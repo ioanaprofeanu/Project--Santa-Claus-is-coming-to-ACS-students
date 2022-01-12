@@ -105,7 +105,7 @@ public class CompleteSimulation implements Simulation {
                     new AnnualChangeInvoker(increaseAgeCommand);
             // when makeChange() is called, the increaseChildrenAge() method is performed
             // in ChildrenDatabase
-            annualChangeInvoker.makeChange(annualChangesInput);
+            annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // remove all young adults
             RemoveYoungAdultsCommand removeYoungAdultsCommand =
@@ -113,7 +113,7 @@ public class CompleteSimulation implements Simulation {
             annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
             // when makeChange() is called, the removeYoungAdults() method is performed
             // in ChildrenDatabase
-            annualChangeInvoker.makeChange(annualChangesInput);
+            annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // add new children
             AddNewChildrenCommand addNewChildrenCommand =
@@ -121,7 +121,7 @@ public class CompleteSimulation implements Simulation {
             annualChangeInvoker = new AnnualChangeInvoker(addNewChildrenCommand);
             // when makeChange() is called, the addChildren() method is performed
             // in ChildrenDatabase
-            annualChangeInvoker.makeChange(annualChangesInput);
+            annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // update children
             UpdateChildrenCommand updateChildrenCommand =
@@ -129,7 +129,7 @@ public class CompleteSimulation implements Simulation {
             annualChangeInvoker = new AnnualChangeInvoker(updateChildrenCommand);
             // when makeChange() is called, the updateChildrenById() method is performed
             // in ChildrenDatabase
-            annualChangeInvoker.makeChange(annualChangesInput);
+            annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // add new gifts, similar to the previous age increase
             AddNewGiftsCommand addNewGiftsCommand =
@@ -137,7 +137,7 @@ public class CompleteSimulation implements Simulation {
             annualChangeInvoker = new AnnualChangeInvoker(addNewGiftsCommand);
             // when makeChange() is called, the addGifts() method is performed
             // in GiftsDatabase
-            annualChangeInvoker.makeChange(annualChangesInput);
+            annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // assign the gifts
             super.makeSimulation(santaDatabase, annualChangesInput.getStrategy());

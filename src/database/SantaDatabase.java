@@ -11,18 +11,23 @@ public final class SantaDatabase {
      */
     private double santaBudget;
     /**
-     * list of all children
+     * database of children
      */
     private final ChildrenDatabase childrenDatabase;
     /**
-     * map of gifts with category as key and the list of
-     * gifts sorted in ascending order by price as value
+     * database of gifts
      */
     private final GiftsDatabase giftsDatabase;
+    /**
+     * database of cities
+     */
+    private final CitiesDatabase citiesDatabase;
 
     public SantaDatabase(final SimulationDataInput simulationDataInput) {
         this.santaBudget = simulationDataInput.getSantaBudget();
-        this.childrenDatabase = new ChildrenDatabase(simulationDataInput);
+        this.citiesDatabase = new CitiesDatabase();
+        this.childrenDatabase = new ChildrenDatabase(simulationDataInput,
+                citiesDatabase);
         this.giftsDatabase = new GiftsDatabase(simulationDataInput);
     }
 
@@ -40,6 +45,10 @@ public final class SantaDatabase {
 
     public GiftsDatabase getGiftsDatabase() {
         return giftsDatabase;
+    }
+
+    public CitiesDatabase getCitiesDatabase() {
+        return citiesDatabase;
     }
 
     @Override

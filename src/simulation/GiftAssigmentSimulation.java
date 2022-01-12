@@ -32,12 +32,14 @@ public abstract class GiftAssigmentSimulation implements Simulation {
         calculateAverageScores(santaDatabase);
         setBudgetUnit(santaDatabase);
         setChildrenBudget(santaDatabase);
+        santaDatabase.getCitiesDatabase().calculateCitiesNiceScores();
         assignGifts(santaDatabase, strategyType);
     }
 
     /**
      * For each child, calculate the average nice score using the factory and strategy patterns
      * @param santaDatabase the main database
+     *                      POT SA O MUT IN CHILDRENDATABASE??????????????
      */
     private void calculateAverageScores(final SantaDatabase santaDatabase) {
         if (santaDatabase == null) {

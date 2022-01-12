@@ -1,6 +1,8 @@
 package command;
 
 import database.ChildrenDatabase;
+import database.CitiesDatabase;
+import database.SantaDatabase;
 import fileio.input.AnnualChangesInput;
 
 /**
@@ -22,7 +24,9 @@ public class AddNewChildrenCommand implements Command {
      * @param annualChangesInput the input annual changes
      */
     @Override
-    public void execute(final AnnualChangesInput annualChangesInput) {
-        childrenDatabase.addChildren(annualChangesInput.getNewChildren());
+    public void execute(final AnnualChangesInput annualChangesInput,
+                        SantaDatabase santaDatabase) {
+        childrenDatabase.addChildren(annualChangesInput.getNewChildren(),
+                santaDatabase.getCitiesDatabase());
     }
 }
