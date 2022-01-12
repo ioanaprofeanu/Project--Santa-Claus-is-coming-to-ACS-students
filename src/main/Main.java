@@ -30,7 +30,7 @@ public final class Main {
         // iterate through the input tests
         for (int i = 1; i <= Constants.TESTS_NUMBER; i++) {
             // load the input data
-            String testPath = Constants.TEST + i + Constants.FILE_EXTENSION;
+            String testPath = Constants.TEST + 25 + Constants.FILE_EXTENSION;
             InputLoader inputLoader = new InputLoader(testPath);
             // initialise the input object
             SimulationDataInput simulationDataInput = inputLoader.readDataInput();
@@ -43,11 +43,10 @@ public final class Main {
             completeSimulation.makeSimulation(simulationDataInput, allYearsChildrenOutput);
 
             // write the output
-            String outputPath = Constants.OUTPUT_PATH + i + Constants.FILE_EXTENSION;
+            String outputPath = Constants.OUTPUT_PATH + 25 + Constants.FILE_EXTENSION;
             OutputLoader outputLoader = new OutputLoader(outputPath, allYearsChildrenOutput);
             outputLoader.writeDataOutput();
         }
-
         Checker.calculateScore();
     }
 }

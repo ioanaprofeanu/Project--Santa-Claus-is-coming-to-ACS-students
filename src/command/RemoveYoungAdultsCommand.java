@@ -1,6 +1,7 @@
 package command;
 
 import database.ChildrenDatabase;
+import database.CitiesDatabase;
 import database.SantaDatabase;
 import fileio.input.AnnualChangesInput;
 
@@ -13,9 +14,14 @@ public class RemoveYoungAdultsCommand implements Command {
      * instance of the object the command will be performed on
      */
     private final ChildrenDatabase childrenDatabase;
+    /**
+     * instance of the object the command will be performed on
+     */
+    private final CitiesDatabase citiesDatabase;
 
-    public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase) {
+    public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase, final CitiesDatabase citiesDatabase) {
         this.childrenDatabase = childrenDatabase;
+        this.citiesDatabase = citiesDatabase;
     }
 
     /**
@@ -26,5 +32,6 @@ public class RemoveYoungAdultsCommand implements Command {
     public void execute(final AnnualChangesInput annualChangesInput,
                         SantaDatabase santaDatabase) {
         childrenDatabase.removeYoungAdults();
+        citiesDatabase.removeCitiesYoungAdults();
     }
 }

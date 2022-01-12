@@ -24,8 +24,8 @@ public final class Constants {
     public static final Integer MAXIMUM_AVERAGE_SCORE = 10;
 
     // values used for expressing the percentages of the changes made by the elves
-    public static final Integer THIRTY = 30;
-    public static final Integer ONE_HUNDRED = 100;
+    public static final int THIRTY = 30;
+    public static final int ONE_HUNDRED = 100;
 
     // the colors of the elves
     public static final String WHITE = "white";

@@ -20,7 +20,7 @@ public class TeenAverageScoreStrategy implements AverageScoreStrategy {
             weightSum += child.getNiceScoreHistory().get(i - 1) * i;
         }
         double averageScore = weightSum / weightFactors;
-        averageScore += child.getNiceScoreBonus();
+        averageScore += averageScore * child.getNiceScoreBonus() / 100;
         if (averageScore > 10) {
             return 10;
         }

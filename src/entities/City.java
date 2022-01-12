@@ -1,5 +1,7 @@
 package entities;
 
+import common.Constants;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +29,10 @@ public class City {
             sumOfScores += child.getAverageScore();
         }
         this.niceScoreCity = sumOfScores / childrenList.size();
+    }
+
+    public void removeCityYoungAdults() {
+        childrenList.removeIf(child -> child.getAge() > Constants.TEEN_UPPER_VALUE);
     }
 
     public String getName() {

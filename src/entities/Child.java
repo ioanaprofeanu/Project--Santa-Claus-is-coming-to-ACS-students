@@ -279,4 +279,15 @@ public final class Child {
     public void setNiceScoreBonus(int niceScoreBonus) {
         this.niceScoreBonus = niceScoreBonus;
     }
+
+    @Override
+    public String toString() {
+        return "Child{" +
+                "id=" + id +
+                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", city='" + city + '\'' +
+                ", averageScore=" + averageScore +
+                '}';
+    }
 }

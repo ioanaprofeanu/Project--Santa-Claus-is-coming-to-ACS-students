@@ -18,7 +18,7 @@ public class KidAverageScoreStrategy implements AverageScoreStrategy {
             sumOfScores += score;
         }
         double averageScore = sumOfScores / child.getNiceScoreHistory().size();
-        averageScore += child.getNiceScoreBonus();
+        averageScore += averageScore * child.getNiceScoreBonus() / 100;
         if (averageScore > 10) {
             return 10;
         }

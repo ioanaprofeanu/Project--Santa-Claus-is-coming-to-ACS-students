@@ -53,7 +53,7 @@
       "giftsPreferences" : [ "Toys", "Books", "Sweets" ],
       "averageScore" : 1.0,
       "niceScoreHistory" : [ 2.0, 0.0 ],
-      "assignedBudget" : 5.777777777777778,
+      "assignedBudget" : 5.777777777777779,
       "receivedGifts" : [ {
         "productName" : "Teddy Bear",
         "price" : 5.0,
@@ -223,7 +223,7 @@
       "giftsPreferences" : [ "Books", "Sweets", "Clothes" ],
       "averageScore" : 5.166666666666667,
       "niceScoreHistory" : [ 10.0, 3.0, 5.0 ],
-      "assignedBudget" : 31.240310077519382,
+      "assignedBudget" : 31.240310077519386,
       "receivedGifts" : [ {
         "productName" : "Milk and Cookies",
         "price" : 30.0,

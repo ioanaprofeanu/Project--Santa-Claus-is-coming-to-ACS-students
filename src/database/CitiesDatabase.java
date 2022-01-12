@@ -19,11 +19,15 @@ public class CitiesDatabase {
     }
 
     public void addToCitiesList(Child child) {
-        // if the city doesn't exist in the list
-        if (!cities.contains(child.getCity())) {
-            cities.add(new City(child.getCity()));
-        }
         // add the child to the list of children within its city
+        for (City city : cities) {
+            if (city.getName().equals(child.getCity())) {
+                city.addChild(child);
+                return;
+            }
+        }
+        // if the city is not found within the list
+        cities.add(new City(child.getCity()));
         cities.get(cities.size() - 1).addChild(child);
     }
 
@@ -39,11 +43,23 @@ public class CitiesDatabase {
         }
     }
 
+    public void removeCitiesYoungAdults() {
+        if (cities == null) {
+            return;
+        }
+        for (City city : cities) {
+            city.removeCityYoungAdults();
+        }
+    }
+
     public List<City> getCities() {
         return cities;
     }
 
-    public void setCities(List<City> cities) {
-        this.cities = cities;
+    @Override
+    public String toString() {
+        return "CitiesDatabase{" +
+                "cities=" + cities +
+                '}';
     }
 }

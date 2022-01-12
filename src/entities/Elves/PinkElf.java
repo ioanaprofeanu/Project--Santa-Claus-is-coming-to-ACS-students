@@ -9,7 +9,6 @@ public class PinkElf extends Elf {
 
     @Override
     public double budgetChange(double childBudget) {
-        double percentage = (double) Constants.THIRTY / Constants.ONE_HUNDRED;
-        return percentage * childBudget;
+        return childBudget * Constants.THIRTY / Constants.ONE_HUNDRED;
     }
 }

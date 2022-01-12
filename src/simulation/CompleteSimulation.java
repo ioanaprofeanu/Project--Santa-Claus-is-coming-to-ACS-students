@@ -109,7 +109,8 @@ public class CompleteSimulation implements Simulation {
 
             // remove all young adults
             RemoveYoungAdultsCommand removeYoungAdultsCommand =
-                    new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase());
+                    new RemoveYoungAdultsCommand(santaDatabase.getChildrenDatabase(),
+                            santaDatabase.getCitiesDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
             // when makeChange() is called, the removeYoungAdults() method is performed
             // in ChildrenDatabase

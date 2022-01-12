@@ -43,7 +43,7 @@
       "giftsPreferences" : [ "Clothes", "Toys", "Board Games" ],
       "averageScore" : 3.0,
       "niceScoreHistory" : [ 3.0 ],
-      "assignedBudget" : 106.05000000000001,
+      "assignedBudget" : 106.05,
       "receivedGifts" : [ {
         "productName" : "Teddy Bear",
         "price" : 5.0,
