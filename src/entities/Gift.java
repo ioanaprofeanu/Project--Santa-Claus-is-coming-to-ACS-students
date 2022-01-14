@@ -10,15 +10,15 @@ public final class Gift {
     /**
      * The product's name
      */
-    private String productName;
+    private final String productName;
     /**
      * The product's price
      */
-    private double price;
+    private final double price;
     /**
      * The product's category
      */
-    private String category;
+    private final String category;
     /**
      * The quantity of product
      */

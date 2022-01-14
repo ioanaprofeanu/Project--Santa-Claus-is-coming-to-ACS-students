@@ -2,7 +2,11 @@ package entities.Elves;
 
 import common.Constants;
 
-public class ElvesFactory {
+/**
+ * Implementation of the factory design pattern for creating the instances of elves,
+ * depending on the given elf color
+ */
+public final class ElvesFactory {
     /**
      * the factory instance of the strategy will be created using the
      * lazy singleton design pattern
@@ -29,13 +33,13 @@ public class ElvesFactory {
      * Returns an elf instance depending on the given color
      * @param color thew elf's color
      */
-    public Elf createElf(String color) {
-        switch (color) {
-            case Constants.WHITE: return new WhiteElf(color);
-            case Constants.BLACK: return new BlackElf(color);
-            case Constants.PINK: return new PinkElf(color);
-            case Constants.YELLOW: return new YellowElf(color);
-            default: return null;
-        }
+    public Elf createElf(final String color) {
+        return switch (color) {
+            case Constants.WHITE -> new WhiteElf();
+            case Constants.BLACK -> new BlackElf();
+            case Constants.PINK -> new PinkElf();
+            case Constants.YELLOW -> new YellowElf();
+            default -> null;
+        };
     }
 }

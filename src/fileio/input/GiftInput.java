@@ -52,14 +52,4 @@ public final class GiftInput {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-
-    @Override
-    public String toString() {
-        return "GiftInput{"
-                + "productName='" + productName + '\''
-                + ", price=" + price
-                + ", category='" + category + '\''
-                + ", quantity='" + quantity + '\''
-                + '}';
-    }
 }

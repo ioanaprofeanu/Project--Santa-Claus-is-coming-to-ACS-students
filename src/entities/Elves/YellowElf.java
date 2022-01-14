@@ -7,18 +7,28 @@ import entities.Gift;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Actions performed by the yellow elf
+ */
 public class YellowElf extends Elf {
-    public YellowElf(String color) {
-        super(color);
-    }
-
+    /**
+     * The yellow elf does not change the budget in any way
+     * @param childBudget the child's budget
+     * @return it will return 0, which will not affect the child's budget
+     */
     @Override
-    public double budgetChange(double childBudget) {
+    public double budgetChange(final double childBudget) {
         return 0;
     }
 
+    /**
+     * If a child has not received any gifts, the yellow elf will give him
+     * the cheapest gift within his favourite category
+     * @param child the current child
+     * @param giftsDatabase the gifts database
+     */
     @Override
-    public void giveBonusGift(Child child, GiftsDatabase giftsDatabase) {
+    public void giveBonusGift(final Child child, final GiftsDatabase giftsDatabase) {
         String childFavouriteCategory = child.getGiftsPreferences().get(0);
         List<Gift> newReceivedGift = new ArrayList<>();
 
@@ -32,6 +42,7 @@ public class YellowElf extends Elf {
                 if (cheapestGift.getQuantity() > 0) {
                     // add the gift to the child's list of received gifts
                     newReceivedGift.add(cheapestGift);
+                    // decrease the gift's quantity
                     cheapestGift.decreaseQuantity();
                     child.setReceivedGifts(newReceivedGift);
                 }

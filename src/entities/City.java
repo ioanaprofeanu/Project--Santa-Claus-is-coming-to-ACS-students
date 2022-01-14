@@ -5,25 +5,34 @@ import common.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class City {
-    private String name;
+/**
+ * Information about a city
+ */
+public final class City {
+    /**
+     * The city's name
+     */
+    private final String name;
+    /**
+     * The city's nice score
+     */
     private double niceScoreCity;
-    private List<Child> childrenList;
+    /**
+     * The city's list of children
+     */
+    private final List<Child> childrenList;
 
-    public City(String name) {
+    public City(final String name) {
         this.name = name;
         this.niceScoreCity = 0;
         this.childrenList = new ArrayList<>();
     }
 
-    public void addChild(Child child) {
+    public void addChild(final Child child) {
         this.childrenList.add(child);
     }
 
     public void calculateNiceScoreCity() {
-        if (childrenList == null) {
-            return;
-        }
         double sumOfScores = 0;
         for (Child child : childrenList) {
             sumOfScores += child.getAverageScore();
@@ -39,32 +48,11 @@ public class City {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public double getNiceScoreCity() {
         return niceScoreCity;
     }
 
-    public void setNiceScoreCity(double niceScoreCity) {
-        this.niceScoreCity = niceScoreCity;
-    }
-
     public List<Child> getChildrenList() {
         return childrenList;
-    }
-
-    public void setChildrenList(List<Child> childrenList) {
-        this.childrenList = childrenList;
-    }
-
-    @Override
-    public String toString() {
-        return "City{" +
-                "name='" + name + '\'' +
-                ", niceScoreCity=" + niceScoreCity +
-                ", childrenList=" + childrenList +
-                '}';
     }
 }

@@ -56,14 +56,4 @@ public final class ChildUpdatesInput {
     public void setElf(String elf) {
         this.elf = elf;
     }
-
-    @Override
-    public String toString() {
-        return "ChildUpdatesInput{"
-                + "id=" + id
-                + ", niceScore=" + niceScore
-                + ", giftsPreferences=" + giftsPreferences
-                + ", elf='" + elf + '\''
-                + '}';
-    }
 }

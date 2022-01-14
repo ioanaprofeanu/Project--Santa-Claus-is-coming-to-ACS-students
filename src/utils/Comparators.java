@@ -23,19 +23,13 @@ public final class Comparators {
         }
     }
 
+    /**
+     * Sort children by nice score in descending order
+     */
     public static final class SortChildrenByNiceScoreDesc implements Comparator<Child> {
         @Override
         public int compare(Child o1, Child o2) {
-            if (o1.getAverageScore() == o2.getAverageScore() && o1.getCity().equals(o2.getCity())) {
-                Integer.compare(o1.getId(), o2.getId());
-            }
-            if (o1.getAverageScore() == o2.getAverageScore()) {
-                return 0;
-            }
-            if (o1.getAverageScore() < o2.getAverageScore()) {
-                return 1;
-            }
-            return -1;
+            return Double.compare(o2.getAverageScore(), o1.getAverageScore());
         }
     }
 
@@ -49,6 +43,9 @@ public final class Comparators {
         }
     }
 
+    /**
+     * Sort cities by nice score city in descending order
+     */
     public static final class SortCitiesByNiceScoreDesc implements Comparator<City> {
         @Override
         public int compare(City o1, City o2) {

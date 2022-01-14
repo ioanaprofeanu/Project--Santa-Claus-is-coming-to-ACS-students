@@ -30,12 +30,4 @@ public final class InitialDataInput {
     public void setSantaGiftsList(final List<GiftInput> santaGiftsList) {
         this.santaGiftsList = santaGiftsList;
     }
-
-    @Override
-    public String toString() {
-        return "InitialDataInput{"
-                + "children=" + children
-                + ", santaGiftsList=" + santaGiftsList
-                + '}';
-    }
 }

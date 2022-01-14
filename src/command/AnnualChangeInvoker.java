@@ -20,8 +20,10 @@ public class AnnualChangeInvoker {
     /**
      * Set off the command
      * @param annualChangesInput the input annual changes
+     * @param santaDatabase Santa's database
      */
-    public void makeChange(final AnnualChangesInput annualChangesInput, SantaDatabase santaDatabase) {
+    public void makeChange(final AnnualChangesInput annualChangesInput,
+                           final SantaDatabase santaDatabase) {
         annualChangeCommand.execute(annualChangesInput, santaDatabase);
     }
 }

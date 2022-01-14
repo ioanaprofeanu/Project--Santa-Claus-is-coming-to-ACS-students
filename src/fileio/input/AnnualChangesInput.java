@@ -67,15 +67,4 @@ public final class AnnualChangesInput {
     public void setStrategy(String strategy) {
         this.strategy = strategy;
     }
-
-    @Override
-    public String toString() {
-        return "AnnualChangesInput{"
-                + "newSantaBudget=" + newSantaBudget
-                + ", newGifts=" + newGifts
-                + ", newChildren=" + newChildren
-                + ", childrenUpdates=" + childrenUpdates
-                + ", strategy=" + strategy
-                + '}';
-    }
 }

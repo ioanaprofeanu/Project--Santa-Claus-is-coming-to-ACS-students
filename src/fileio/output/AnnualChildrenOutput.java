@@ -31,11 +31,4 @@ public final class AnnualChildrenOutput {
     public void setChildren(final List<Child> children) {
         this.children = children;
     }
-
-    @Override
-    public String toString() {
-        return "AnnualChildrenOutput{"
-                + "children=" + children
-                + '}';
-    }
 }

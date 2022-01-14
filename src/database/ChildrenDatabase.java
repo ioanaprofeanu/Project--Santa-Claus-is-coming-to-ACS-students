@@ -5,6 +5,7 @@ import entities.Child;
 import fileio.input.ChildInput;
 import fileio.input.ChildUpdatesInput;
 import fileio.input.SimulationDataInput;
+import strategy.averagescore.AverageScoreStrategyFactory;
 import utils.Comparators;
 
 import java.util.ArrayList;
@@ -77,6 +78,16 @@ public final class ChildrenDatabase {
     }
 
     /**
+     * For each child, calculate the average nice score using the factory and strategy patterns
+     */
+    public void calculateAverageScores() {
+        for (Child child : children) {
+            child.calculateAverageScore(Objects.requireNonNull(AverageScoreStrategyFactory
+                    .getInstance().createAverageScoreStrategy(child)));
+        }
+    }
+
+    /**
      * Retrieve the child which has a given id
      * @param id the given id
      * @return the found child
@@ -114,12 +125,5 @@ public final class ChildrenDatabase {
 
     public void setChildren(final List<Child> children) {
         this.children = children;
-    }
-
-    @Override
-    public String toString() {
-        return "ChildrenDatabase{"
-                + "children=" + children
-                + '}';
     }
 }

@@ -43,7 +43,7 @@ public final class Child {
     /**
      * List of all scores
      */
-    private List<Double> niceScoreHistory;
+    private final List<Double> niceScoreHistory;
     /**
      * Assigned budget
      */
@@ -61,9 +61,13 @@ public final class Child {
      * The child's nice score bonus
      */
     @JsonIgnore
-    private int niceScoreBonus;
+    private final int niceScoreBonus;
 
-    public Child(ChildBuilder childBuilder) {
+    /**
+     * Constructor used to build a child using the builder design pattern
+     * @param childBuilder the builder object resembling the input child
+     */
+    public Child(final ChildBuilder childBuilder) {
         this.id = childBuilder.id;
         this.lastName = childBuilder.lastName;
         this.firstName = childBuilder.firstName;
@@ -78,6 +82,11 @@ public final class Child {
         this.niceScoreBonus = childBuilder.niceScoreBonus;
     }
 
+    /**
+     * Constructor used for creating a deep copy of a child,
+     * used for creating the output child object
+     * @param child the to-be-copied child object
+     */
     public Child(final Child child) {
         this.id = child.getId();
         this.lastName = child.getLastName();
@@ -92,25 +101,32 @@ public final class Child {
         this.assignedBudget = child.getAssignedBudget();
         this.receivedGifts = new ArrayList<>();
         this.receivedGifts.addAll(child.getReceivedGifts());
+        this.elf = child.getElf();
+        this.niceScoreBonus = child.getNiceScoreBonus();
     }
 
+    /**
+     * Builder class for creating a child
+     */
     static public class ChildBuilder {
-        private int id;
-        private String lastName;
-        private String firstName;
-        private String city;
-        private int age;
-        private List<String> giftsPreferences;
-        private double averageScore = 0;
-        private List<Double> niceScoreHistory = new ArrayList<>();
-        private double assignedBudget = 0;
-        private List<Gift> receivedGifts = new ArrayList<>();
-        private Elf elf;
+        // mandatory fields
+        private final int id;
+        private final String lastName;
+        private final String firstName;
+        private final String city;
+        private final int age;
+        private final List<String> giftsPreferences;
+        private final double averageScore = 0;
+        private final List<Double> niceScoreHistory = new ArrayList<>();
+        private final double assignedBudget = 0;
+        private final List<Gift> receivedGifts = new ArrayList<>();
+        private final Elf elf;
+        // optional field
         private int niceScoreBonus = 0;
 
-        public ChildBuilder(int id, String lastName, String firstName,
-                            String city, int age, List<String> giftsPreferences,
-                            double niceScore, String elfColor) {
+        public ChildBuilder(final int id, final String lastName, final String firstName,
+                            final String city, final int age, final List<String> giftsPreferences,
+                            final double niceScore, final String elfColor) {
             this.id = id;
             this.lastName = lastName;
             this.firstName = firstName;
@@ -121,11 +137,20 @@ public final class Child {
             this.elf = ElvesFactory.getInstance().createElf(elfColor);
         }
 
-        public ChildBuilder addNiceScoreBonus(int niceScoreBonus) {
+        /**
+         * Attach the optional field to the already created ChildBuilder object
+         * @param niceScoreBonus the bonus nice score
+         * @return the child object
+         */
+        public ChildBuilder addNiceScoreBonus(final int niceScoreBonus) {
             this.niceScoreBonus = niceScoreBonus;
             return this;
         }
 
+        /**
+         * Build the child using the builder
+         * @return the child builder object
+         */
         public Child buildChild() {
             return new Child(this);
         }
@@ -193,7 +218,7 @@ public final class Child {
     }
 
     /**
-     * Update the child's elf
+     * Update the child's elf using the elves factory
      * @param elfColor the elf's color
      */
     private void updateElf(final String elfColor) {
@@ -220,39 +245,23 @@ public final class Child {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public List<String> getGiftsPreferences() {
         return giftsPreferences;
-    }
-
-    public void setGiftsPreferences(List<String> giftsPreferences) {
-        this.giftsPreferences = giftsPreferences;
     }
 
     public double getAverageScore() {
         return averageScore;
     }
 
-    public void setAverageScore(double averageScore) {
-        this.averageScore = averageScore;
-    }
-
     public List<Double> getNiceScoreHistory() {
         return niceScoreHistory;
-    }
-
-    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
-        this.niceScoreHistory = niceScoreHistory;
     }
 
     public double getAssignedBudget() {
         return assignedBudget;
     }
 
-    public void setAssignedBudget(double assignedBudget) {
+    public void setAssignedBudget(final double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
 
@@ -260,7 +269,7 @@ public final class Child {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(List<Gift> receivedGifts) {
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 
@@ -268,26 +277,7 @@ public final class Child {
         return elf;
     }
 
-    public void setElf(Elf elf) {
-        this.elf = elf;
-    }
-
     public int getNiceScoreBonus() {
         return niceScoreBonus;
-    }
-
-    public void setNiceScoreBonus(int niceScoreBonus) {
-        this.niceScoreBonus = niceScoreBonus;
-    }
-
-    @Override
-    public String toString() {
-        return "Child{" +
-                "id=" + id +
-                ", lastName='" + lastName + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", city='" + city + '\'' +
-                ", averageScore=" + averageScore +
-                '}';
     }
 }

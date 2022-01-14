@@ -7,7 +7,8 @@ import fileio.input.AnnualChangesInput;
 
 /**
  * The class which contains the concrete command which removes the young
- * adults from the list of children within the database
+ * adults from the list of children and the list of children from certain
+ * cities within the database
  */
 public class RemoveYoungAdultsCommand implements Command {
     /**
@@ -19,18 +20,21 @@ public class RemoveYoungAdultsCommand implements Command {
      */
     private final CitiesDatabase citiesDatabase;
 
-    public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase, final CitiesDatabase citiesDatabase) {
+    public RemoveYoungAdultsCommand(final ChildrenDatabase childrenDatabase,
+                                    final CitiesDatabase citiesDatabase) {
         this.childrenDatabase = childrenDatabase;
         this.citiesDatabase = citiesDatabase;
     }
 
     /**
-     * Execute the command which removes children from list within the database
+     * Execute the commands which remove young adults from list of children
+     * and the list of children from cities within the database
      * @param annualChangesInput the input annual changes
+     * @param santaDatabase Santa's database
      */
     @Override
     public void execute(final AnnualChangesInput annualChangesInput,
-                        SantaDatabase santaDatabase) {
+                        final SantaDatabase santaDatabase) {
         childrenDatabase.removeYoungAdults();
         citiesDatabase.removeCitiesYoungAdults();
     }

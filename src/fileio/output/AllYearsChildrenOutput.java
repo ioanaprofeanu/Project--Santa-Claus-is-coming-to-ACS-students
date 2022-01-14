@@ -23,11 +23,4 @@ public final class AllYearsChildrenOutput {
     public void setAnnualChildren(final List<AnnualChildrenOutput> annualChildren) {
         this.annualChildren = annualChildren;
     }
-
-    @Override
-    public String toString() {
-        return "AllYearsChildrenOutput{"
-                + "annualChildren=" + annualChildren
-                + '}';
-    }
 }

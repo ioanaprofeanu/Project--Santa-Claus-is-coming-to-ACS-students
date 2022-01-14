@@ -54,14 +54,4 @@ public final class SimulationDataInput {
     public void setAnnualChanges(final List<AnnualChangesInput> annualChanges) {
         this.annualChanges = annualChanges;
     }
-
-    @Override
-    public String toString() {
-        return "SimulationDataInput{"
-                + "numberOfYears=" + numberOfYears
-                + ", santaBudget=" + santaBudget
-                + ", initialData=" + initialData
-                + ", annualChanges=" + annualChanges
-                + '}';
-    }
 }

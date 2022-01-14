@@ -1,6 +1,5 @@
 package simulation;
 
-import strategy.averagescore.AverageScoreStrategyFactory;
 import database.SantaDatabase;
 import entities.Child;
 import entities.Gift;
@@ -29,26 +28,11 @@ public abstract class GiftAssigmentSimulation implements Simulation {
      */
     public void makeSimulation(final SantaDatabase santaDatabase,
                                final String strategyType) {
-        calculateAverageScores(santaDatabase);
+        santaDatabase.getChildrenDatabase().calculateAverageScores();
         setBudgetUnit(santaDatabase);
         setChildrenBudget(santaDatabase);
         santaDatabase.getCitiesDatabase().calculateCitiesNiceScores();
         assignGifts(santaDatabase, strategyType);
-    }
-
-    /**
-     * For each child, calculate the average nice score using the factory and strategy patterns
-     * @param santaDatabase the main database
-     *                      POT SA O MUT IN CHILDRENDATABASE??????????????
-     */
-    private void calculateAverageScores(final SantaDatabase santaDatabase) {
-        if (santaDatabase == null) {
-            return;
-        }
-        for (Child child : santaDatabase.getChildrenDatabase().getChildren()) {
-            child.calculateAverageScore(Objects.requireNonNull(AverageScoreStrategyFactory
-                    .getInstance().createAverageScoreStrategy(child)));
-        }
     }
 
     /**

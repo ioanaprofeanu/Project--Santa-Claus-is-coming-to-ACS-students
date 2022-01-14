@@ -22,10 +22,11 @@ public class UpdateChildrenCommand implements Command {
      * Execute the command which updates information about certain
      * children from list within the database
      * @param annualChangesInput the input annual changes
+     * @param santaDatabase Santa's database
      */
     @Override
     public void execute(final AnnualChangesInput annualChangesInput,
-                        SantaDatabase santaDatabase) {
+                        final SantaDatabase santaDatabase) {
         childrenDatabase.updateChildrenById(annualChangesInput.getChildrenUpdates());
     }
 }

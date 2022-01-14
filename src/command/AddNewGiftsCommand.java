@@ -21,9 +21,11 @@ public class AddNewGiftsCommand implements Command {
     /**
      * Execute the command which adds gifts to the list within the database
      * @param annualChangesInput the input annual changes
+     * @param santaDatabase Santa's database
      */
     @Override
-    public void execute(final AnnualChangesInput annualChangesInput, SantaDatabase santaDatabase) {
+    public void execute(final AnnualChangesInput annualChangesInput,
+                        final SantaDatabase santaDatabase) {
         giftsDatabase.addGifts(annualChangesInput.getNewGifts());
     }
 }

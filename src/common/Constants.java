@@ -14,7 +14,7 @@ public final class Constants {
     public static final Integer TESTS_NUMBER_SMALL = 15;
 
     // values used for calculating the child's age category
-    // and the average score
+    // and the average nice score
     public static final Integer BABY_LOWER_VALUE = 0;
     public static final Integer BABY_UPPER_VALUE = 4;
     public static final Integer CHILD_LOWER_VALUE = 5;

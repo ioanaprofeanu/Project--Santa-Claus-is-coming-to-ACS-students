@@ -1,8 +1,11 @@
 package strategy.giftassigment;
 
 import common.Constants;
-import database.SantaDatabase;
 
+/**
+ * Implementation of the factory design pattern for creating the gift assigment strategies,
+ * depending on the received type of strategy
+ */
 public final class GiftsAssigmentStrategyFactory {
     /**
      * the factory instance of the strategy will be created using the
@@ -26,7 +29,12 @@ public final class GiftsAssigmentStrategyFactory {
         return instance;
     }
 
-    public GiftsAssigmentStrategy createGiftsAssigmentStrategy(String strategyType) {
+    /**
+     * Returns the strategy which will be used for distributing the gifts
+     * @param strategyType the strategy type
+     * @return new instance of the wanted strategy
+     */
+    public GiftsAssigmentStrategy createGiftsAssigmentStrategy(final String strategyType) {
         switch (strategyType) {
             case Constants.ID: return new IdGiftsAssigmentStrategy();
             case Constants.NICE_SCORE: return new NiceScoreGiftsAssigmentStrategy();
