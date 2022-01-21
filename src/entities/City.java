@@ -28,18 +28,30 @@ public final class City {
         this.childrenList = new ArrayList<>();
     }
 
+    /**
+     * Add a new child to the children list
+     * @param child new to-be-added child
+     */
     public void addChild(final Child child) {
         this.childrenList.add(child);
     }
 
+    /**
+     * Calculate the nice score of the city
+     */
     public void calculateNiceScoreCity() {
         double sumOfScores = 0;
         for (Child child : childrenList) {
             sumOfScores += child.getAverageScore();
         }
+        // the nice score city will be the arithmetical average of
+        // the children's nice scores
         this.niceScoreCity = sumOfScores / childrenList.size();
     }
 
+    /**
+     * Remove young adults from the city's list of children
+     */
     public void removeCityYoungAdults() {
         childrenList.removeIf(child -> child.getAge() > Constants.TEEN_UPPER_VALUE);
     }

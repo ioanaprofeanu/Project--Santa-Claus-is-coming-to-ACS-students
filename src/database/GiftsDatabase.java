@@ -19,7 +19,7 @@ public final class GiftsDatabase {
      * Map of gifts with category as key and the list of
      * gifts sorted in ascending order by price as value
      */
-    private Map<String, List<Gift>> gifts;
+    private final Map<String, List<Gift>> gifts;
 
     public GiftsDatabase(final SimulationDataInput simulationDataInput) {
         this.gifts = new HashMap<>();
@@ -70,16 +70,5 @@ public final class GiftsDatabase {
 
     public Map<String, List<Gift>> getGifts() {
         return gifts;
-    }
-
-    public void setGifts(final Map<String, List<Gift>> gifts) {
-        this.gifts = gifts;
-    }
-
-    @Override
-    public String toString() {
-        return "GiftsDatabase{"
-                + "gifts=" + gifts
-                + '}';
     }
 }

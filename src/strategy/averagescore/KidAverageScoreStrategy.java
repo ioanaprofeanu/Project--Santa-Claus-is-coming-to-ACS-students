@@ -1,5 +1,6 @@
 package strategy.averagescore;
 
+import common.Constants;
 import entities.Child;
 
 /**
@@ -18,9 +19,11 @@ public class KidAverageScoreStrategy implements AverageScoreStrategy {
             sumOfScores += score;
         }
         double averageScore = sumOfScores / child.getNiceScoreHistory().size();
-        averageScore += averageScore * child.getNiceScoreBonus() / 100;
-        if (averageScore > 10) {
-            return 10;
+        // add the nice score bonus
+        averageScore += averageScore * child.getNiceScoreBonus() / Constants.ONE_HUNDRED;
+        // if the average score is above the maximum average score permitted, return 10
+        if (averageScore > Constants.MAXIMUM_AVERAGE_SCORE) {
+            return Constants.MAXIMUM_AVERAGE_SCORE;
         }
         return averageScore;
     }

@@ -23,36 +23,43 @@ public final class ChildrenDatabase {
     private List<Child> children;
 
     public ChildrenDatabase(final SimulationDataInput simulationDataInput,
-                            CitiesDatabase citiesDatabase) {
+                            final CitiesDatabase citiesDatabase) {
         this.children = new ArrayList<>();
         addChildren(simulationDataInput.getInitialData().getChildren(), citiesDatabase);
     }
 
     /**
-     * Adds an input list of children to the list of all children
+     * Adds, using the builder design patter, an input list of children
+     * to the list of all children and the cities' database
      * used both for the initial simulation and the year simulation
      * @param childrenInput the input list of children
+     * @param citiesDatabase the database of cities
      */
     public void addChildren(final List<ChildInput> childrenInput,
-                            CitiesDatabase citiesDatabase) {
+                            final CitiesDatabase citiesDatabase) {
         if (childrenInput == null) {
             return;
         }
         for (ChildInput childInput : childrenInput) {
+            // if the child's age is below the young adult age
             if (childInput.getAge() <= Constants.TEEN_UPPER_VALUE) {
                 Child child;
+                // if the bonus nice score is zero
                 if (childInput.getNiceScoreBonus() == 0) {
+                    // create a new child object using builder without the optional field
                     child = new Child.ChildBuilder(childInput.getId(), childInput.getLastName(),
                             childInput.getFirstName(), childInput.getCity(), childInput.getAge(),
                             childInput.getGiftsPreferences(), childInput.getNiceScore(),
                             childInput.getElf()).buildChild();
                 } else {
+                    // create a new child object using builder with the optional field
                     child = new Child.ChildBuilder(childInput.getId(), childInput.getLastName(),
                             childInput.getFirstName(), childInput.getCity(), childInput.getAge(),
                             childInput.getGiftsPreferences(), childInput.getNiceScore(),
                             childInput.getElf()).addNiceScoreBonus(childInput.getNiceScoreBonus())
                             .buildChild();
                 }
+                // add the child to the list of children and to the cities database
                 children.add(child);
                 citiesDatabase.addToCitiesList(child);
             }

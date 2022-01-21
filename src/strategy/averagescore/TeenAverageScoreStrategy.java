@@ -1,5 +1,6 @@
 package strategy.averagescore;
 
+import common.Constants;
 import entities.Child;
 
 /**
@@ -20,9 +21,11 @@ public class TeenAverageScoreStrategy implements AverageScoreStrategy {
             weightSum += child.getNiceScoreHistory().get(i - 1) * i;
         }
         double averageScore = weightSum / weightFactors;
-        averageScore += averageScore * child.getNiceScoreBonus() / 100;
-        if (averageScore > 10) {
-            return 10;
+        // add the nice score bonus
+        averageScore += averageScore * child.getNiceScoreBonus() / Constants.ONE_HUNDRED;
+        // if the average score is above the maximum average score permitted, return 10
+        if (averageScore > Constants.MAXIMUM_AVERAGE_SCORE) {
+            return Constants.MAXIMUM_AVERAGE_SCORE;
         }
         return averageScore;
     }

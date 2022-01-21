@@ -15,5 +15,5 @@ public interface GiftsAssigmentStrategy {
      * @param santaDatabase Santa's database
      * @return the list of ordered children
      */
-    List<Child> getOrderedChildren(final SantaDatabase santaDatabase);
+    List<Child> getOrderedChildren(SantaDatabase santaDatabase);
 }

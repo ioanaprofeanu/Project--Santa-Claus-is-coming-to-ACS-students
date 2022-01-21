@@ -13,6 +13,6 @@ public class BlackElf extends Elf {
      */
     @Override
     public double budgetChange(final double childBudget) {
-        return - childBudget * Constants.THIRTY / Constants.ONE_HUNDRED;
+        return -childBudget * Constants.THIRTY / Constants.ONE_HUNDRED;
     }
 }

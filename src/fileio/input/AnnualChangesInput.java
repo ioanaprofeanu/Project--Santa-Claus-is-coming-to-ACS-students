@@ -32,7 +32,7 @@ public final class AnnualChangesInput {
         return newSantaBudget;
     }
 
-    public void setNewSantaBudget(double newSantaBudget) {
+    public void setNewSantaBudget(final double newSantaBudget) {
         this.newSantaBudget = newSantaBudget;
     }
 
@@ -40,7 +40,7 @@ public final class AnnualChangesInput {
         return newGifts;
     }
 
-    public void setNewGifts(List<GiftInput> newGifts) {
+    public void setNewGifts(final List<GiftInput> newGifts) {
         this.newGifts = newGifts;
     }
 
@@ -48,7 +48,7 @@ public final class AnnualChangesInput {
         return newChildren;
     }
 
-    public void setNewChildren(List<ChildInput> newChildren) {
+    public void setNewChildren(final List<ChildInput> newChildren) {
         this.newChildren = newChildren;
     }
 
@@ -56,7 +56,7 @@ public final class AnnualChangesInput {
         return childrenUpdates;
     }
 
-    public void setChildrenUpdates(List<ChildUpdatesInput> childrenUpdates) {
+    public void setChildrenUpdates(final List<ChildUpdatesInput> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
     }
 
@@ -64,7 +64,7 @@ public final class AnnualChangesInput {
         return strategy;
     }
 
-    public void setStrategy(String strategy) {
+    public void setStrategy(final String strategy) {
         this.strategy = strategy;
     }
 }

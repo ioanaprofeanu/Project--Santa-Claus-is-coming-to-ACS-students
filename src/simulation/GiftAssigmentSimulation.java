@@ -25,6 +25,7 @@ public abstract class GiftAssigmentSimulation implements Simulation {
     /**
      * Function which executes all operations in order to assign gifts
      * @param santaDatabase the main database
+     * @param strategyType the gift assigment strategy
      */
     public void makeSimulation(final SantaDatabase santaDatabase,
                                final String strategyType) {
@@ -68,14 +69,16 @@ public abstract class GiftAssigmentSimulation implements Simulation {
     /**
      * Assign gifts for each child
      * @param santaDatabase the main database
+     * @param strategyType the gift assigment strategy type
      */
     private void assignGifts(final SantaDatabase santaDatabase,
                              final String strategyType) {
         if (santaDatabase == null) {
             return;
         }
-        List<Child> childrenList = Objects.requireNonNull(GiftsAssigmentStrategyFactory.getInstance().
-                createGiftsAssigmentStrategy(strategyType)).getOrderedChildren(santaDatabase);
+        List<Child> childrenList = Objects.requireNonNull(GiftsAssigmentStrategyFactory.
+                getInstance().createGiftsAssigmentStrategy(strategyType)).
+                getOrderedChildren(santaDatabase);
         for (Child child : childrenList) {
             double childAssignedBudget = child.getAssignedBudget();
             List<Gift> newReceivedGifts = new ArrayList<>();
@@ -83,12 +86,15 @@ public abstract class GiftAssigmentSimulation implements Simulation {
                 // if the current gift preference exists in santa's gifts hashmap
                 if (santaDatabase.getGiftsDatabase().getGifts().containsKey(giftPreferences)) {
                     // iterate through the list of gifts ordered in ascending order by price
-                    for (Gift currentGift : santaDatabase.getGiftsDatabase().getGifts().get(giftPreferences)) {
+                    for (Gift currentGift : santaDatabase.getGiftsDatabase().
+                            getGifts().get(giftPreferences)) {
                         // if the gift still exists and is within the child's budget
-                        if (currentGift.getQuantity() > 0 && currentGift.getPrice() <= childAssignedBudget) {
+                        if (currentGift.getQuantity() > 0 && currentGift.getPrice()
+                                <= childAssignedBudget) {
                             // add the gift in the child's received gifts list
                             newReceivedGifts.add(currentGift);
-                            // from the child's assigned budget, subtract the price of the given gift
+                            // from the child's assigned budget,
+                            // subtract the price of the given gift
                             childAssignedBudget -= currentGift.getPrice();
                             // decrease the quantity of the gift
                             currentGift.decreaseQuantity();

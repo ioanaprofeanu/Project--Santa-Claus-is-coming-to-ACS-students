@@ -50,13 +50,4 @@ public final class SantaDatabase {
     public CitiesDatabase getCitiesDatabase() {
         return citiesDatabase;
     }
-
-    @Override
-    public String toString() {
-        return "SantaDatabase{"
-                + "santaBudget=" + santaBudget
-                + ", childrenDatabase=" + childrenDatabase
-                + ", giftsDatabase=" + giftsDatabase
-                + '}';
-    }
 }

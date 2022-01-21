@@ -12,7 +12,7 @@ public abstract class Elf {
      * the elf's color
      * @param childBudget the child's budget
      */
-    public abstract double budgetChange(final double childBudget);
+    public abstract double budgetChange(double childBudget);
 
     /**
      * Gives a certain child a bonus gift, in case of not receiving

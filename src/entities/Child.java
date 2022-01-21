@@ -108,7 +108,7 @@ public final class Child {
     /**
      * Builder class for creating a child
      */
-    static public class ChildBuilder {
+    public static class ChildBuilder {
         // mandatory fields
         private final int id;
         private final String lastName;
@@ -139,11 +139,11 @@ public final class Child {
 
         /**
          * Attach the optional field to the already created ChildBuilder object
-         * @param niceScoreBonus the bonus nice score
+         * @param newNiceScoreBonus the bonus nice score
          * @return the child object
          */
-        public ChildBuilder addNiceScoreBonus(final int niceScoreBonus) {
-            this.niceScoreBonus = niceScoreBonus;
+        public ChildBuilder addNiceScoreBonus(final int newNiceScoreBonus) {
+            this.niceScoreBonus = newNiceScoreBonus;
             return this;
         }
 

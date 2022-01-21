@@ -1,6 +1,5 @@
 package fileio.input;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +28,7 @@ public final class ChildUpdatesInput {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(final int id) {
         this.id = id;
     }
 
@@ -37,7 +36,7 @@ public final class ChildUpdatesInput {
         return niceScore;
     }
 
-    public void setNiceScore(Double niceScore) {
+    public void setNiceScore(final Double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -45,7 +44,7 @@ public final class ChildUpdatesInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<String> giftsPreferences) {
+    public void setGiftsPreferences(final List<String> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
@@ -53,7 +52,7 @@ public final class ChildUpdatesInput {
         return elf;
     }
 
-    public void setElf(String elf) {
+    public void setElf(final String elf) {
         this.elf = elf;
     }
 }

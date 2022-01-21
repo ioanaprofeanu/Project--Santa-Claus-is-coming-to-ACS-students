@@ -19,7 +19,7 @@ public class NiceScoreCityGiftAssigmentStrategy implements GiftsAssigmentStrateg
      * @return the ordered list of children
      */
     @Override
-    public List<Child> getOrderedChildren(SantaDatabase santaDatabase) {
+    public List<Child> getOrderedChildren(final SantaDatabase santaDatabase) {
         // order the list of cities within Santa's database by nice score city
         // in ascending order
         Collections.sort(santaDatabase.getCitiesDatabase().getCities(),

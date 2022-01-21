@@ -32,7 +32,11 @@ public final class Gift {
         this.quantity = giftInput.getQuantity();
     }
 
+    /**
+     * Decrease the quantity of the object
+     */
     public void decreaseQuantity() {
+        // if trying to decrease an object which is out of stock
         if (quantity == 0) {
             throw new IllegalCallerException("Gift " + productName + " out of stock!");
         }

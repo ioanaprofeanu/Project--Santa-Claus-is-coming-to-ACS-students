@@ -18,7 +18,7 @@ public class NiceScoreGiftsAssigmentStrategy implements GiftsAssigmentStrategy {
      * @return the ordered list of children
      */
     @Override
-    public List<Child> getOrderedChildren(SantaDatabase santaDatabase) {
+    public List<Child> getOrderedChildren(final SantaDatabase santaDatabase) {
         // create a new list of children using the already existing
         // children within Santa's database
         List<Child> orderedList = new ArrayList<>(santaDatabase.
