@@ -1,5 +1,5 @@
 Profeanu Ioana, 323CA
-Proiect - Etapa 1 - Santa Claus is coming to ACS students
+Proiect - Santa Claus is coming to ACS students
 ---------------------------------------------------------------------------------------------------
 # GitHub Repository
  > https://github.com/ioanaprofeanu/Project--Santa-Claus-is-coming-to-ACS-students
