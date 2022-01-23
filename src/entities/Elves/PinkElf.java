@@ -5,7 +5,7 @@ import common.Constants;
 /**
  * Actions performed by the pink elf
  */
-public class PinkElf extends Elf {
+public final class PinkElf extends Elf {
     /**
      * Get the budget change made by the pink elf
      * @param childBudget the child's budget

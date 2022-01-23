@@ -83,7 +83,7 @@ public final class Child {
     }
 
     /**
-     * Constructor used for creating a deep copy of a child,
+     * Constructor used for creating a copy of a child,
      * used for creating the output child object
      * @param child the to-be-copied child object
      */

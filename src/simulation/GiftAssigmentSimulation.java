@@ -105,6 +105,7 @@ public abstract class GiftAssigmentSimulation implements Simulation {
             }
             // set the child's list of received gifts
             child.setReceivedGifts(newReceivedGifts);
+            // get the bonus gift from the elf; modifications occur only for the yellow elf
             child.getElf().giveBonusGift(child, santaDatabase.getGiftsDatabase());
         }
     }

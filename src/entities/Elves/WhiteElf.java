@@ -3,7 +3,7 @@ package entities.Elves;
 /**
  * Actions performed by the white elf
  */
-public class WhiteElf extends Elf {
+public final class WhiteElf extends Elf {
     /**
      * The white elf does not change the budget in any way
      * @param childBudget the child's budget

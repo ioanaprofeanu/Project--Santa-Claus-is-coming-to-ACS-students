@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Actions performed by the yellow elf
  */
-public class YellowElf extends Elf {
+public final class YellowElf extends Elf {
     /**
      * The yellow elf does not change the budget in any way
      * @param childBudget the child's budget
