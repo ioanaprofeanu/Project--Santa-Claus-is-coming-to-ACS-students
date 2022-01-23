@@ -5,8 +5,9 @@ Proiect - Etapa 1 - Santa Claus is coming to ACS students
  > https://github.com/ioanaprofeanu/Project--Santa-Claus-is-coming-to-ACS-students
 ---------------------------------------------------------------------------------------------------
 # Overview
-* The program simulates a database of gifts and children, allowing the user to distribute gifts to
-certain kids based on different methods, similar to the way Santa Claus offers his presents.
+* The program simulates a database of gifts, children and cities, allowing the user to distribute
+gifts to certain kids based on different methods, similar to the way Santa Claus offers his
+presents.
 ---------------------------------------------------------------------------------------------------
 # Dependencies
  ## Necessary libraries for the project:
@@ -44,7 +45,7 @@ certain kids based on different methods, similar to the way Santa Claus offers h
      sorted by price gifts within that category as value, and methods for adding new gifts.
      * CitiesDatabase - contains a list of all cities and methods for adding new children to
      their specific city, as well as methods for modifying the data from the cities.
-     * SantaDatabase - contains the two databases for children, gifts and cities.
+     * SantaDatabase - contains the three databases for children, gifts and cities.
  * simulations:
      * Simulation - interface on which each simulation is based.
      * GiftAssigmentSimulation - implements Simulation and contains all the methods used for
@@ -64,9 +65,9 @@ certain kids based on different methods, similar to the way Santa Claus offers h
  * Average Score Strategy - contains the three strategy classes which implement the
    AverageScoreStrategy interface, and which calculate and return the average value for each
    age group, to which the nice score bonus is added; the AverageScoreStrategyFactory contains
-   the factory which returns an instance of a certain strategy, depending on the input child's
+   the factory that returns an instance of a certain strategy, depending on the input child's
    age group.
- * Gift Assigment Strategy - contains three strategy classes which implement the interface
+ * Gift Assigment Strategy - contains the three strategy classes which implement the interface
    GiftAssigmentStrategy, and which create and return a list of children, whose order depends on
    the type of gift assigment; the GiftAssigmentStrategyFactory contains the factory which returns
    an instance of a certain strategy, depending on the input type of gift assigment
@@ -87,10 +88,10 @@ certain kids based on different methods, similar to the way Santa Claus offers h
   list of children from all years.
  ## Rounds within the years:
   * Firstly, reassign Santa's budget and then using the command design pattern which interacts
-  with the database of children, cities and/or gifts and the input data of annual changes,
-  increases the children's ages, removes all young adults, adds new children in ascending order
-  by id, updates given children, adds new gifts in ascending order by price, and similarly to the
-  process done in Round 0, assign the gifts and adds the new list of children to the output list.
+  with the database of children, cities and gifts and the input data of annual changes, increases
+  the children's ages, removes all young adults, adds new children in ascending order by id,
+  updates given children, adds new gifts in ascending order by price, and similarly to the process
+  done in Round 0, assigns the gifts and adds the new list of children to the output list.
 ---------------------------------------------------------------------------------------------------
 # Design Patterns - the design patterns used throughout the implementation:
  ## Strategy:
@@ -99,12 +100,12 @@ certain kids based on different methods, similar to the way Santa Claus offers h
    common interface which contains the getAverageScore() method and is implemented by the three
    specific strategies, in which the score is calculated according to the given formulas; if
    existing, the nice score bonus is also added, and the total score is truncated to the maximum
-   value
+   value.
  * Gift Assigment Strategy:
    * used for creating an ordered list of children, depending on the gift assigment strategy type;
    GiftAssigmentStrategy is the common interface which contains the getOrderedChildren() method and
    is implemented by the three specific strategies, where a list of children is sorted using
-   comparators suited for each strategy type;
+   comparators suited for each strategy type.
  ## Factory:
  * Average Score Strategy Factory and Gift Assigment Strategy Factory:
    * because for each strategy type there are several implementations of that specific strategy,
@@ -123,9 +124,9 @@ certain kids based on different methods, similar to the way Santa Claus offers h
  ## Singleton:
  * Because for each factory (elves, gift assigment and average score) only one instance of that
  specific factory is needed for generating new objects, the lazy singleton design pattern is used
- to restrict the instantiation of those factories to only a single one.
+ to restrict the instantiation of those factories to only a single one per factory.
  ## Command:
- * Considering that several changes must be done the within yearly rounds, the implementation of
+ * Considering that several changes must be done within the yearly rounds, the implementation of
  the update processes is made using a series of commands performing on the GiftsDatabase and
  ChildrenDatabase objects, commands which implement the Command interface that contains the
  execute() method; the AnnualChangeInvoker represents the invoker which initiates the request
@@ -135,6 +136,6 @@ certain kids based on different methods, similar to the way Santa Claus offers h
  be considered optional; because of that, a builder class is used within the Child class, in order
  to create a child which can contain only the mandatory fields, or which can also contain the
  optional one; the builder is called whenever a new child is created within the ChildrenDatabase
- class.d
+ class.
 ---------------------------------------------------------------------------------------------------
  

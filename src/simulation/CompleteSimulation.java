@@ -113,7 +113,7 @@ public class CompleteSimulation implements Simulation {
                             santaDatabase.getCitiesDatabase());
             annualChangeInvoker = new AnnualChangeInvoker(removeYoungAdultsCommand);
             // when makeChange() is called, the removeYoungAdults() method is performed
-            // in ChildrenDatabase
+            // in ChildrenDatabase and CitiesDatabase
             annualChangeInvoker.makeChange(annualChangesInput, santaDatabase);
 
             // add new children

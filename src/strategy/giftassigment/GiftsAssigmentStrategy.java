@@ -6,8 +6,8 @@ import entities.Child;
 import java.util.List;
 
 /**
- * Interface for the strategy pattern which sorts the list of children
- * depending on the type of gift assigment strategy
+ * Interface for the strategy pattern which sorts and returns a list of
+ * children depending on the type of gift assigment strategy
  */
 public interface GiftsAssigmentStrategy {
     /**

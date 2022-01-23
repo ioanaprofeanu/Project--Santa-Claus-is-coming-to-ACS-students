@@ -7,7 +7,7 @@ import entities.Gift;
 import java.util.Comparator;
 
 /**
- * Class which implements the comparators used for sorting the arraylists within the program
+ * Class which implements the comparators used for sorting the lists within the program
  */
 public final class Comparators {
     private Comparators() {
